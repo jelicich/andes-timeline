@@ -1,8 +1,12 @@
 import Test from '../../components/test';
+import Timeline from '../../components/timeline';
 
 export default {
   name: 'home',
-  components: {Test},
+  components: {
+    Test, 
+    Timeline
+  },
   props: [],
   data () {
     return {
