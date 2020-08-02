@@ -1,8 +1,9 @@
 import Test from '../../components/test';
+import GsapTest from '../../components/GsapTests'
 
 export default {
   name: 'home',
-  components: {Test},
+  components: {Test, GsapTest},
   props: [],
   data () {
     return {
@@ -17,6 +18,7 @@ export default {
   },
   methods: {
 
+    
   }
 }
 
