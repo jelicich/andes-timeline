@@ -1,3 +1,38 @@
 .gsap-tests {
 
+    .plane-wrapper {
+        width:510px;
+
+        .plane-aspect-ratio {
+            position:relative;
+            height:0;
+            overflow:hidden;
+            padding-bottom:18%;
+
+            span {
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                object-fit: cover;
+                background-image:url('../../assets/plane.png');
+                background-size: 100% auto;
+                background-position-y:100%;
+                
+            }
+            .clip {
+                transition: clip-path 300ms ease;
+                clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+            }
+            .clip-cut {
+                clip-path:polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)
+            }
+            .turn-right {
+                background-position-y: 0%;
+            }
+
+        }
+
+    }
 }

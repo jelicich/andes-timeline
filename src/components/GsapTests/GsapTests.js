@@ -13,19 +13,12 @@ export default {
 
   },
   mounted () {
-    this.moveTitle();
   },
   methods: {
-    moveTitle() {
-      gsap.to('#gsap', {
-        duration:1, 
-        x:200, 
-        repeat:-1, 
-        delay:1, 
-        repeatDelay:1, 
-        yoyo:true, 
-        ease:"none"
-      } )
+    turnPlane() {
+        gsap.from(this.$refs.plane, {duration:0.3, skewX:'-20deg', skewY:'-180deg'});
+        this.$refs.plane.classList.toggle('turn-right');
+
     }
   }
 }
