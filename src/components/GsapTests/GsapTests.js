@@ -16,9 +16,14 @@ export default {
   },
   methods: {
     turnPlane() {
-        gsap.from(this.$refs.plane, {duration:0.3, skewX:'-20deg', skewY:'-180deg'});
-        this.$refs.plane.classList.toggle('turn-right');
-
+        gsap.to(this.$refs.plane, {
+          duration:0.3,  
+          scaleX:0, 
+          repeat:1, 
+          yoyo:true,
+          ease: "power2.inOut"
+        });
+          this.$refs.plane.classList.toggle('turn-right');
     }
   }
 }

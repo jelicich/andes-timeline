@@ -19,7 +19,7 @@
                 background-image:url('../../assets/plane.png');
                 background-size: 100% auto;
                 background-position-y:100%;
-                
+                transition: background-position-y 0ms ease 300ms
             }
             .clip {
                 transition: clip-path 300ms ease;
