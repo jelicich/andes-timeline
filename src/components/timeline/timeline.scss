@@ -1,4 +1,6 @@
 .timeline {
+    padding-top: 15px;
+    
     ol {
         list-style-type: none;
         margin: 0;
@@ -7,5 +9,14 @@
         width: 100vw;
         justify-content: space-between;
         padding: 0 20px;
+        margin-top: -15px;
+    }
+
+    .v-icon {
+        color: #000;
+    }
+
+    hr {
+        border-top-color: #000;
     }
 }
