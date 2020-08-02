@@ -1,8 +1,21 @@
 <section class="timeline">
     <h1>timeline Component</h1>
-    <ul>
-        <ol v-for="(item, i) in timeline" :key="i">
-            {{item.title}}
-        </ol>
-    </ul>
+    <ol>
+        <li v-for="(item, i) in timeline" :key="i">
+            <v-tooltip top>
+                <template v-slot:activator="{ on, attrs }">
+                    
+                    <v-btn
+                        color="primary"
+                        dark
+                        v-bind="attrs"
+                        v-on="on"
+                    >
+                        <v-icon>mdi-checkbox-blank-circle</v-icon>
+                    </v-btn>
+                </template>
+                <span>{{item.title}}</span>
+            </v-tooltip>
+        </li>
+    </ol>
 </section>

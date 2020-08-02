@@ -1,7 +1,12 @@
+// import VTooltip from 'vuetify/es5/components/VTooltip';
+// import VIcon from 'vuetify/es5/components/VIcon';
 
 export default {
   name: 'timeline',
-  components: {},
+  components: {
+    // VTooltip,
+    // VIcon
+  },
   props: [],
   data () {
     return {
