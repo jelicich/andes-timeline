@@ -1,22 +1,19 @@
-
 export default {
   name: 'test',
   components: {},
   props: [],
-  data () {
+  data() {
     return {
 
-    }
+    };
   },
   computed: {
 
   },
-  mounted () {
+  mounted() {
 
   },
   methods: {
 
-  }
-}
-
-
+  },
+};
