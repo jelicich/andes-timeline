@@ -1,25 +1,22 @@
 import Test from '../../components/test';
-import GsapTest from '../../components/GsapTests'
+import GsapTest from '../../components/GsapTests';
 
 export default {
   name: 'home',
-  components: {Test, GsapTest},
+  components: { Test, GsapTest },
   props: [],
-  data () {
+  data() {
     return {
 
-    }
+    };
   },
   computed: {
 
   },
-  mounted () {
+  mounted() {
 
   },
   methods: {
 
-    
-  }
-}
-
-
+  },
+};

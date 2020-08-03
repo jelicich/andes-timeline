@@ -1,7 +1,7 @@
 <template>
-    <v-app>
-        <home></home>
-        <!-- <v-app-bar
+  <v-app>
+    <home />
+    <!-- <v-app-bar
         app
         color="primary"
         dark
@@ -41,7 +41,7 @@
         <v-main>
         <HelloWorld/>
         </v-main> -->
-    </v-app>
+  </v-app>
 </template>
 
 <script>
@@ -51,7 +51,7 @@ export default {
   name: 'App',
 
   components: {
-    Home
+    Home,
   },
 
   data: () => ({
