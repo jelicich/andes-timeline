@@ -11,5 +11,7 @@
         "airbnb-base",
         "plugin:vue/recommended"
     ],
-    "rules": {}
+    "rules": {
+        "indent": 1
+    }
 }
