@@ -23,9 +23,8 @@ export default {
           yoyo:true,
           ease: "power2.inOut"
         });
-          this.$refs.plane.classList.toggle('turn-right');
+
+        this.$refs.plane.classList.toggle('turn-right');
     }
   }
 }
-
-

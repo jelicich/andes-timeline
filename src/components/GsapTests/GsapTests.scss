@@ -1,8 +1,15 @@
 .gsap-tests {
-
+    position:absolute;
+    bottom:20px;
+    left:0;
+    width:100%;
+    display:grid;
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". plane ."
+                         "timeline timeline timeline";
     .plane-wrapper {
-        width:510px;
-
+        grid-area:plane;
         .plane-aspect-ratio {
             position:relative;
             height:0;
@@ -34,5 +41,32 @@
 
         }
 
+    }
+
+    .timeline {
+        grid-area:timeline;
+        
+        ul {
+            padding-left:0;
+            display:grid;
+            grid-auto-flow: column;
+            height:100%;
+            font-size:1.8rem;
+            transform:translateX(50%);
+
+            li {
+                padding-left:2rem;
+                position:relative;
+                &::before {
+                    content: "";
+                    position:absolute;
+                    width:0.3rem;
+                    top:0;
+                    left:0;
+                    bottom:0;
+                    background:#000;
+                }
+            }
+        }
     }
 }
