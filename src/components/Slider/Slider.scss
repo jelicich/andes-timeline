@@ -1,3 +1,21 @@
 .slider {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-auto-flow:column;
+}
 
+// TODO move to child component
+.slide {
+    width: 100vw;
+    height: 100vh;
+    background: khaki;
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+.slide:nth-child(even) {
+    background: palevioletred;
 }
