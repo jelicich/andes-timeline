@@ -1,5 +1,8 @@
 @import 'base';
 
-// global objects
-@import 'Slide';
-@import 'ButtonLink';
+// we need to import them inside this class to be able to override vuetify styles
+.v-application {
+    // global objects
+    @import 'Slide';
+    @import 'ButtonLink';
+}

@@ -1,6 +1,13 @@
 .slider {
-    width: 100vw;
+    width: fit-content;
     height: 100vh;
     display: grid;
     grid-auto-flow:column;
+    background: linear-gradient(165deg, #527785 0%, #527785 100%);
+
+    .cloud-container {
+        position: absolute;
+        top: 30vh;
+        left: 40vw;
+    }
 }

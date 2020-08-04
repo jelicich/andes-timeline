@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import StartSlide from '../Slides/Start.slide'
 import SecondPlaneSlide from '../Slides/SecondPlane.slide'
-
+import Cloud from '../Cloud'
 import Util from '../../service/util';
 
 const util = new Util();
@@ -11,7 +11,8 @@ export default {
     name: 'slider',
     components: {
         StartSlide,
-        SecondPlaneSlide
+        SecondPlaneSlide,
+        Cloud
     },
     props: [],
     data() {
@@ -58,10 +59,7 @@ export default {
         window.addEventListener('wheel', this.moveSlide);
     },
     methods: {
-        
-
         moveSlide: function(e) {
-            console.log('yo')
             // if the container is animating the wheel won't work
             if (this.tl && this.tl.isActive()) {
                 return;
@@ -83,7 +81,7 @@ export default {
             //this.tl = new TimelineMax();
             //this.tl.to(SLIDER_SEL, 0.4, { xPercent: -100 / slides.length * activeSlide });
             this.tl.to(SLIDER_SEL, {
-                duration:2,
+                duration:4,
                 ease: "power4.out",
                 // ease: CustomEase.create("custom", "M0,0 C0,0 0.334,0.042 0.5,0.5 0.628,0.966 1,1 1,1 "),
                 // xPercent: -100 / this.slides.length * this.activeSlide
