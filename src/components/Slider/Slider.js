@@ -89,7 +89,6 @@ export default {
                 x:`${-util.vw(100) * this.activeSlide}`,
                 // transform: 'translateX(-100vw)'
             })
-
         }
     },
 };
