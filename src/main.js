@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import vuetify from './plugins/vuetify';
-import './assets/style/screen.scss';
+import './styles/styles.scss';
 
 Vue.config.productionTip = false;
 

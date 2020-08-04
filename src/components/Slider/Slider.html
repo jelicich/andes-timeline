@@ -1,7 +1,3 @@
 <section class="slider" id="slider">
-    <article v-for="(slide, i) in slides" :key="i" class="slide">
-        <h1>{{slide.title}}</h1>
-        <h2>{{slide.date}}</h2>
-        <p>{{slide.description}}</p>
-    </article>
+    <component v-for="(component, i) in slides" :key="i" :is="component"></component>
 </section>

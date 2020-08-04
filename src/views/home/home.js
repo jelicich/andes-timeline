@@ -3,24 +3,25 @@ import GsapTest from '../../components/GsapTests';
 import Slider from '../../components/Slider';
 
 export default {
-  name: 'home',
-  components: { 
-    Test, 
-    GsapTest,
-    Slider },
-  props: [],
-  data() {
-    return {
+    name: 'home',
+    components: {
+        Test,
+        GsapTest,
+        Slider
+    },
+    props: [],
+    data() {
+        return {
 
-    };
-  },
-  computed: {
+        };
+    },
+    computed: {
 
-  },
-  mounted() {
+    },
+    mounted() {
 
-  },
-  methods: {
+    },
+    methods: {
 
-  },
+    },
 };
