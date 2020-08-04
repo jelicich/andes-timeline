@@ -1,0 +1,35 @@
+.start-slide {
+    display: flex;
+
+    .inner {
+        margin: auto;
+        position: relative;
+        display: flex;
+    }
+
+    .title-1 {
+        font-size: 10rem;
+        display: block;
+        line-height: 0.5;
+        margin-left: 2.5rem;
+    }
+
+    .title-2 {
+        font-size: 5rem;
+        line-height: 1;
+    }
+
+    .date {
+        position: absolute;
+        top: -12px;
+        left: -65px;
+        text-align: right;
+        line-height: 0.8;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 4rem;
+    }
+
+    .description {
+        font-size: 2rem
+    }
+}
