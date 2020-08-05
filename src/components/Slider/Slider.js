@@ -1,7 +1,6 @@
 import gsap from 'gsap';
 import StartSlide from '../Slides/Start.slide'
 import SecondPlaneSlide from '../Slides/SecondPlane.slide'
-import Cloud from '../Cloud'
 import Util from '../../service/util';
 
 const util = new Util();
@@ -11,26 +10,20 @@ export default {
     name: 'slider',
     components: {
         StartSlide,
-        SecondPlaneSlide,
-        Cloud
+        SecondPlaneSlide
     },
-    props: [],
+    props: ['slides'],
     data() {
         return {
             tl: gsap.timeline(),
             state: this.$store.state,
-                        
-            slides: [
-                'start-slide',
-                'second-plane-slide'
-            ]
         };
     },
     computed: {
 
     },
     mounted() {
-        console.log('mounted', this.state)
+        this.$store.setTotalSlides = this.slides.length;
         window.addEventListener('wheel', this.setSlide);
     },
     watch: {
@@ -44,7 +37,6 @@ export default {
     },
     methods: {
         setSlide: function(e) {
-            console.log('scrolling and setting slide')
             // if the container is animating the wheel won't work
             if (this.tl && this.tl.isActive()) {
                 return;
@@ -61,14 +53,12 @@ export default {
             // if at its not at the beginning or end we update the active slide in store
             if (oldSlide !== activeSlide) {
                 this.$store.setActiveSlide(activeSlide);
-                console.log('store set')
             }
         },
 
         animateSlide: function(slideNumber) {
-            console.log('animating to: ', slideNumber);
             this.tl.to(SLIDER_SEL, {
-                duration:4,
+                duration: 4,
                 ease: "power4.out",
                 x:`${-util.vw(100) * slideNumber}`,
                 // transform: 'translateX(-100vw)'

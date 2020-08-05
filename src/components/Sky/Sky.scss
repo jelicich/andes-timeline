@@ -1,0 +1,10 @@
+.sky {
+    position: relative;
+    z-index: 1;
+    
+    .cloud-container {
+        position: absolute;
+        top: 20vh;
+        left: 20vw;
+    }
+}

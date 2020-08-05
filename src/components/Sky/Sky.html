@@ -1,0 +1,6 @@
+<section class="sky" :style="{width: width}" ref="sky">
+  <div v-for="index in clouds" :key="index" class="cloud-container" :style="{top: getRandom(20)+'vh', left: getRandom(100)+'vw'}">
+    <cloud :seed="getRandom(4)"></cloud>
+  </div>
+</section>
+
