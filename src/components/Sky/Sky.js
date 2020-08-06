@@ -11,7 +11,7 @@ export default {
     components: {
         Cloud
     },
-    props: ['slidesLength'],
+    props: ['slidesLength', 'duration'],
     data() {
         return {
             state: this.$store.state,
@@ -47,7 +47,7 @@ export default {
         moveSky: function(activeSlide) {
             console.log('moving sky')
             this.tl.to(this.$refs.sky, {
-                duration: 4,
+                duration: this.duration,
                 ease: "power4.out",
                 x:`${-util.vw(100*RATIO) * activeSlide}`,
                 // transform: 'translateX(-100vw)'

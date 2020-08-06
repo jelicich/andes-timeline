@@ -18,6 +18,7 @@ export default {
                 'start-slide',
                 'second-plane-slide'
             ],
+            animationDuration: 4
             //slidesLength: this.slides.length
         };
     },
@@ -27,7 +28,7 @@ export default {
         }
     },
     mounted() {
-        
+
     },
     methods: {
 
