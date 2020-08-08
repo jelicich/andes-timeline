@@ -1,0 +1,38 @@
+.revolution-slide {
+    display: flex;
+    color: #fff;
+
+    .inner {
+        margin: auto;
+        position: relative;
+        display: flex;
+    }
+
+    .title-1 {
+        font-size: 10rem;
+        display: block;
+        line-height: 0.5;
+    }
+
+    .title-2 {
+        font-size: 5rem;
+        line-height: 0.5;
+        margin-left: 6.5rem;
+    }
+
+    .date {
+        position: absolute;
+        top: -46px;
+        left: -30px;
+        text-align: right;
+        line-height: 0.8;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 4rem;
+    }
+
+    .description {
+        font-size: 2rem;
+        font-style: italic;
+        line-height: 1;
+    }
+}

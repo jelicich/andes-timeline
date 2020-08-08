@@ -3,5 +3,11 @@
     height: 100vh;
     display: grid;
     grid-auto-flow:column;
-    background: linear-gradient(165deg, #527785 0%, #527785 100%);
+    // background: linear-gradient(165deg, #527785 0%, #527785 100%);
+    background: linear-gradient(0deg, #62a0d8 0%, #2178d1 50%, #085cb3 100%);
+    transition: background-color 4s ease-in-out;
+
+    &.cloudy {
+        background: linear-gradient(0deg, #d2d2d2 0%, #8f8f8f 50%, #151515 100%);
+    }
 }

@@ -1,7 +1,10 @@
 .sky {
-    position: relative;
+    position: absolute;
     z-index: 1;
-    
+    background: url('../../assets/clouds.png') repeat-x;
+    height: 100vh;
+    background-size: auto 40vh;
+
     .cloud-container {
         position: absolute;
         top: 20vh;

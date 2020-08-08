@@ -2,6 +2,7 @@ import Test from '../../components/test';
 import GsapTest from '../../components/GsapTests';
 import Slider from '../../components/Slider';
 import Sky from '../../components/Sky';
+import Timeline from '../../components/Timeline';
 
 export default {
     name: 'home',
@@ -9,14 +10,28 @@ export default {
         Test,
         GsapTest,
         Slider,
-        Sky
+        Sky,
+        Timeline
     },
     props: [],
     data() {
         return {
             slides: [
-                'start-slide',
-                'second-plane-slide'
+                {
+                    title: 'Inicio',
+                    date: 'Jun 2006',
+                    component: 'start-slide'
+                },
+                {
+                    title: 'Crece',
+                    date: 'Dic 2006',
+                    component: 'second-plane-slide'
+                },
+                {
+                    title: '"Revolución"',
+                    date: 'Jun 2017',
+                    component: 'revolution-slide'
+                },
             ],
             animationDuration: 4
             //slidesLength: this.slides.length

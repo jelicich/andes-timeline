@@ -1,3 +1,6 @@
 <section class="slider" id="slider">
-    <component v-for="(component, i) in slides" :key="i" :is="component"></component>
+    <template v-for="(slide, i) in slides" >
+        <component :key="i" :is="slide.component" :isActive="state.activeSlide === i"></component>
+    </template>
+    
 </section>

@@ -1,0 +1,73 @@
+.timeline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    
+    .plane-wrapper {
+        width: 350px;
+        margin: 0 auto;
+        
+        .plane-aspect-ratio {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            padding-bottom: 18%;
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                background-image: url('../../assets/plane.png');
+                background-size: 100% auto;
+                background-position-y: 100%;
+                transition: background-position-y 0ms ease 200ms
+            }
+
+            .turn-right {
+                background-position-y: 0%;
+            }
+        }
+    }
+
+    .timeline-wrapper {
+        position: relative;
+        z-index: 2;
+        
+        ul {
+            padding-left: 0;
+            height: 100%;
+            font-size: 1.8rem;
+            // transform: translateX(50%);
+            display: flex;
+            margin-left: 50vw;
+
+            li {
+                color: #fff;
+                padding-left: 2rem;
+                position: relative;
+                line-height: 1;
+                margin-top: 5px;
+                width: $timeline-element-width;
+                flex: 0 0 $timeline-element-width;
+                
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 0.3rem;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: rgba(255, 255, 255, 0.5);
+                }
+
+                div {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

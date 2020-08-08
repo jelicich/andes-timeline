@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import StartSlide from '../Slides/Start.slide'
 import SecondPlaneSlide from '../Slides/SecondPlane.slide'
+import RevolutionSlide from '../Slides/Revolution.slide'
 import Util from '../../service/util';
 
 const util = new Util();
@@ -10,7 +11,8 @@ export default {
     name: 'slider',
     components: {
         StartSlide,
-        SecondPlaneSlide
+        SecondPlaneSlide,
+        RevolutionSlide
     },
     props: ['slides', 'duration'],
     data() {
@@ -66,6 +68,8 @@ export default {
             })
         },
 
+        
+        // BELLOW: experimental mimic scrollTrigger
         calculateScroll(e) {
             console.log('delta:', e.deltaY);
             this.moveSlide(e.deltaY);

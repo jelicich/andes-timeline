@@ -1,0 +1,19 @@
+<section class="timeline">
+    <div class="plane-wrapper">
+        <div class="plane-aspect-ratio">
+            <span ref="plane" class="plane-asset"></span>
+        </div>
+    </div>
+    <div class="timeline-wrapper">
+        <ul ref="timeline">
+            <li v-for="(slide, i) in slides" :key="i">
+                <div class="d-inline-block" @click="goTo(i)">
+                    <h1>{{ slide.title }}</h1>
+                    <p>{{ slide.date }}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+</section>
+

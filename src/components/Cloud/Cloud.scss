@@ -19,8 +19,8 @@
         height: 275px;
         border-radius: 50%;
         position: absolute;
-        top: -35vh;
-        left: -25vw;
+        top: 0;
+        left: 0;
     }
       
     #cloud-back {
@@ -31,12 +31,12 @@
     #cloud-mid {
         filter: url(#filter-mid);
         box-shadow: 300px 340px 70px -60px rgba(158, 168, 179, 0.5);
-          left: -25vw;
+          left: 0;
     }
       
     #cloud-front {
         filter: url(#filter-front);
         box-shadow: 300px 370px 60px -100px rgba(0, 0, 0, 0.3);
-          left: -25vw;
+          left: 0;
     }
 }

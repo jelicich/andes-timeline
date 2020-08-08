@@ -10,6 +10,15 @@ module.exports = {
                 }
             }
         }])
-    }
+    },
+    css: {
+        // loaderOptions: {
+        //     sass: {
+        //         sassOptions: {
+        //             prependData: '@import "~@/assets/sass/main.scss"',
+        //         }
+        //     },
+        // },
+    },
 }
   
