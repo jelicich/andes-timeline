@@ -132,24 +132,29 @@ export default {
                 
                 if(this.direction === BACKWARD) {
                     this.timeline.to(this.plane.rotation, {
-                        duration: 0.2,
-                        x: tau * .05, 
-                        ease: 'power1.inOut'
+                        // duration: .5,
+                        // x: tau * .05, 
+                        // ease: 'power1.inOut'
                     }).to(this.plane.rotation, {
-                        duration: 1.8,
+                        duration: 2,
                         x: tau * .10, 
                         y: tau * .25, 
                         z: -tau * .25, 
                         ease: 'power1.inOut'
-                    }, '-=0.1').to(this.plane.position, {
+                    }, '-=0.5').to(this.plane.position, {
                         duration: 1.8,
-                        z: 50,
+                        z: 75,
+                        x: -20,
                         ease: 'power1.inOut',
                     }, '-=1.8').to(this.plane.position, {
                         duration: 1,
+                        x: 0,
+                        ease: 'power1.inOut',
+                    }, '-=0.5').to(this.plane.position, {
+                        duration: 1,
                         z: 0,
                         ease: 'power1.inOut',
-                    }, '-=0').to(this.plane.rotation, {
+                    }, '-=0.5').to(this.plane.rotation, {
                         duration: 1,
                         x: tau * .25, 
                         ease: 'power1.inOut',
