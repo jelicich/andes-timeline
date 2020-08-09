@@ -149,7 +149,6 @@ export default {
             } else {
                 this.timeline.to(this.$refs.timeline, {
                     duration: this.duration,
-                    // x:'-=300',
                     x:`${-this.liWidth * slideNumber}`,
                 })
             }

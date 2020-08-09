@@ -14,11 +14,12 @@ export default {
         SecondPlaneSlide,
         RevolutionSlide
     },
-    props: ['slides', 'duration'],
+    props: ['slides', 'duration', 'isDelayed'],
     data() {
         return {
             tl: gsap.timeline(),
             state: this.$store.state,
+            delayTime: 2,
         };
     },
     computed: {
@@ -60,11 +61,13 @@ export default {
         },
 
         animateSlide: function(slideNumber) {
+            const duration = this.isDelayed ? this.duration - this.delayTime : this.duration;
+            const delay = this.isDelayed ? this.delayTime : 0;
             this.tl.to(SLIDER_SEL, {
-                duration: this.duration,
+                duration: duration,
                 ease: "power4.out",
                 x:`${-util.vw(100) * slideNumber}`,
-                // transform: 'translateX(-100vw)'
+                delay: delay
             })
         },
 
