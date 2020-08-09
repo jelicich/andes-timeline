@@ -132,25 +132,25 @@ export default {
                 
                 if(this.direction === BACKWARD) {
                     this.timeline.to(this.plane.rotation, {
-                        // duration: .5,
-                        // x: tau * .05, 
-                        // ease: 'power1.inOut'
-                    }).to(this.plane.rotation, {
                         duration: 2,
                         x: tau * .10, 
                         y: tau * .25, 
                         z: -tau * .25, 
                         ease: 'power1.inOut'
-                    }, '-=0.5').to(this.plane.position, {
+                    },).to(this.plane.position, {
+                        duration: 2,
+                        x: -20,
+                        ease: 'power1.inOut',
+                    }, '-=2').to(this.plane.position, {
                         duration: 1.8,
                         z: 75,
-                        x: -20,
+                        x: -30,
                         ease: 'power1.inOut',
                     }, '-=1.8').to(this.plane.position, {
                         duration: 1,
                         x: 0,
                         ease: 'power1.inOut',
-                    }, '-=0.5').to(this.plane.position, {
+                    }, '-=1.0').to(this.plane.position, {
                         duration: 1,
                         z: 0,
                         ease: 'power1.inOut',
@@ -163,6 +163,7 @@ export default {
                         x:`${-this.liWidth * slideNumber}`,
                     },'-=1')
                 } else {
+                    
                     // FORWARD
                     this.timeline.to(this.plane.rotation, {
                         duration: 0.2,
