@@ -4,7 +4,7 @@
         <cloud :seed="getRandom(4)"></cloud>
     </div> -->
 
-    <div v-for="index in clouds" :key="index" class="cloud-container"
+    <div v-for="index in clouds" :key="index" ref="cloudContainer" class="cloud-container"
         :style="{top: `${getRandomFromRange(-10, 15)}vh`, left: `${getRandom(width / slidesLength * index)}vw`}">
         <cloud-png :imgNumber="getRandom(5)"></cloud-png>
     </div>

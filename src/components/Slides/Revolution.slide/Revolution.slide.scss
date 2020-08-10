@@ -1,6 +1,7 @@
 .revolution-slide {
     display: flex;
     color: #fff;
+    position: relative;
 
     .inner {
         margin: auto;
@@ -34,5 +35,23 @@
         font-size: 2rem;
         font-style: italic;
         line-height: 1;
+    }
+
+    
+    .clouds-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        opacity: 0;
+        
+        width: 100vw;
+        height: 100vh;
+        background: url('../../../assets/clouds.png') repeat-x;
+        background-size: auto 40vh;
+    }
+
+    &.isActive {
+           
     }
 }

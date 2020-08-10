@@ -1,5 +1,5 @@
 export default {
-    props: ['isActive'],
+    props: ['isActive', 'duration'],
     data() {
         return {}
     },

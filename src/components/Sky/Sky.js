@@ -74,7 +74,7 @@ export default {
                 ease: "power4.out",
                 x:`${-step * activeSlide}`,
                 // transform: 'translateX(-100vw)'
-            }).to('.cloud-container', {
+            }).to(this.$refs.cloudContainer, {
                 duration: this.duration,
                 ease: "power4.out",
                 x:`${- (step * CLOUD_DISPLACEMENT) * activeSlide}`,
