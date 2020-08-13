@@ -8,11 +8,50 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <style>
+      html,
+      body {
+          width: 100vw;
+          height: 100vh;
+          overflow: hidden;
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+      }
+      .SplashScreen {
+          position: absolute;
+          z-index: 9999;
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: #ffffff;
+          opacity: 1;
+          font-family: sans-serif;
+          font-size: 20px;
+          justify-content: center;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          overflow: hidden;
+          opacity: 1;
+          transition: opacity calc(var(--animation-duration) / 2) ease-in-out;
+      }
+      .SplashScreen p {
+        margin: 0 0 10px;
+        line-height: 1;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <div id="splash-screen" class="SplashScreen">
+      <p><b>#TodosSomosAndes</b></p>
+      <p>Cargando...</p>
+    </div>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>

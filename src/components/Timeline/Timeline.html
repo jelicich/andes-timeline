@@ -15,5 +15,10 @@
         </ul>
     </div>
     
+    <div v-if="$vuetify.breakpoint.smAndDown">
+        <button class="timeline-nav-left" @click="goTo(state.activeSlide - 1)"><v-icon>mdi-chevron-left</v-icon></button>
+        <button class="timeline-nav-right" @click="goTo(state.activeSlide + 1)"><v-icon>mdi-chevron-right</v-icon></button>
+    </div>
+    
 </section>
 

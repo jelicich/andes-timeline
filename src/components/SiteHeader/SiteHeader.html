@@ -1,0 +1,59 @@
+<section class="site-header">
+    <!-- <h1>#todossomosandes</h1> -->
+
+    <!-- <v-card class="mx-auto overflow-hidden" height="400"> -->
+        <v-app-bar color="rgba(255,255,255,0)" dark>
+            <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+
+            <v-toolbar-title>
+                <h1>
+                    <!-- "https://twitter.com/intent/tweet?hashtags=TwitterStories%2CTBT%2CFF&amp;original_referer=https%3A%2F%2Fdeveloper.twitter.com%2Fen%2Fdocs%2Ftwitter-for-websites%2Ftweet-button%2Fguides%2Fhashtag-button&amp;ref_src=twsrc%5Etfw&amp;text=My%20story&amp;tw_p=tweetbutton" -->
+                    <a target="_blank" :href="`https://twitter.com/intent/tweet?hashtags=todossomosandes&text=${encodeURI('Yo apoyo el trabajo argentino www.todossomosandes.com.ar')}`">#TodosSomosAndes</a>
+                </h1>
+            </v-toolbar-title>
+
+            <v-spacer></v-spacer>
+
+            <v-btn icon href="https://twitter.com/empleados_andes" target="_blank">
+                <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+
+            <v-btn icon href="https://www.instagram.com/empleados_argentinos_andes/" target="_blank">
+                <v-icon>mdi-instagram</v-icon>
+            </v-btn>
+
+            <v-btn icon href="https://www.facebook.com/empleados.argentinos.andes" target="_blank">
+                <v-icon>mdi-facebook</v-icon>
+            </v-btn>
+
+        </v-app-bar>
+
+        <v-navigation-drawer v-model="drawer" absolute temporary>
+            <v-list nav dense>
+                <v-list-item-group active-class="deep-purple--text text--accent-4">
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-home</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-title>Home</v-list-item-title>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-account</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-title>Account</v-list-item-title>
+                    </v-list-item>
+
+                </v-list-item-group>
+            </v-list>
+            
+            
+            <div class="text-center">
+                <a class="dev-contact" href="https://www.linkedin.com/in/esteban-jelicich-84279b39/" target="_blank">
+                    Desarrollo
+                </a>
+            </div>
+        </v-navigation-drawer>
+    <!-- </v-card> -->
+</section>

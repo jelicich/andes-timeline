@@ -5,7 +5,7 @@
     </div> -->
 
     <div v-for="index in clouds" :key="index" ref="cloudContainer" class="cloud-container"
-        :style="{top: `${getRandomFromRange(-10, 15)}vh`, left: `${getRandom(width / slidesLength * index)}vw`}">
+        :style="{top: `${getRandomFromRange(-10, 15)}vh`, left: `${getCloudHorizontalPosition(index)}vw`}">
         <cloud-png :imgNumber="getRandom(5)"></cloud-png>
     </div>
 

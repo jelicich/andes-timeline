@@ -1,4 +1,15 @@
 .Slide {
     width: 100vw;
     height: 100vh;
+
+    .Slide-inner {
+        margin: auto;
+        position: relative;
+        display: flex;
+        z-index: 2;
+
+        @include sm-down {
+            flex-direction: column;
+        }
+    }
 }

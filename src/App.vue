@@ -1,61 +1,41 @@
 <template>
   <v-app>
-    <home />
-    <!-- <v-app-bar
-        app
-        color="primary"
-        dark
-        >
-        <div class="d-flex align-center">
-            <v-img
-            alt="Vuetify Logo"
-            class="shrink mr-2"
-            contain
-            src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-            transition="scale-transition"
-            width="40"
-            />
-
-            <v-img
-            alt="Vuetify Name"
-            class="shrink mt-1 hidden-sm-and-down"
-            contain
-            min-width="100"
-            src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-            width="100"
-            />
-        </div>
-
-        <v-spacer></v-spacer>
-
-        <v-btn
-            href="https://github.com/vuetifyjs/vuetify/releases/latest"
-            target="_blank"
-            text
-        >
-            <span class="mr-2">Latest Release</span>
-            <v-icon>mdi-open-in-new</v-icon>
-        </v-btn>
-        </v-app-bar>
-
-        <v-main>
-        <HelloWorld/>
-        </v-main> -->
+    <site-header></site-header>
+    <home :animationDuration="animationDuration"></home>
   </v-app>
 </template>
 
 <script>
 import Home from './views/home';
+import SiteHeader from './components/SiteHeader';
+import Util from './service/util'
+
+const util = new Util();
+const SPLASH_SEL = '#splash-screen';
 
 export default {
-  name: 'App',
+	name: 'App',
 
-  components: {
-    Home,
-  },
+	components: {
+		Home,
+		SiteHeader
+	},
 
-  data: () => ({
-    //
-  }),
+	data: () => ({
+		animationDuration: util.isMobile() ? 2 : 4,
+	}),
+
+	mounted() {
+		if(util.isMobile()) {
+			document.documentElement.style.setProperty('--animation-duration', '2s');
+		}
+		window.addEventListener('load', () => {
+			const splash = document.querySelector(SPLASH_SEL);
+			splash.style.opacity = 0;
+			setTimeout(() => {
+				splash.parentElement.removeChild(splash);
+			}, this.animationDuration * 1000)
+		})
+	}
 };
 </script>

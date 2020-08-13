@@ -2,10 +2,10 @@
     display: flex;
     color: #fff;
 
-    .inner {
-        margin: auto;
-        position: relative;
-        display: flex;
+    h1 {
+        @include sm-down {
+            padding-left: 30px;
+        }
     }
 
     .title-1 {
@@ -13,11 +13,19 @@
         display: block;
         line-height: 0.5;
         margin-left: 2.5rem;
+        
+        @include sm-down {
+            font-size: 4rem;
+        }
     }
 
     .title-2 {
         font-size: 5rem;
         line-height: 1;
+
+        @include sm-down {
+            font-size: 2.5rem;
+        }
     }
 
     .date {
@@ -28,11 +36,25 @@
         line-height: 0.8;
         color: rgba(255, 255, 255, 0.5);
         font-size: 4rem;
+        
+        @include sm-down {
+            font-size: 2rem;
+            left: 7px;
+        }
     }
 
     .description {
         font-size: 2rem;
         font-style: italic;
         line-height: 1;
+
+        @include sm-down {
+            font-size: 1.6rem;
+            padding: 0 30px;
+
+            br {
+                display: none;
+            }
+        }
     }
 }

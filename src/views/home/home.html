@@ -1,9 +1,5 @@
 <section class="home">
-    <!-- <h1>home Component</h1>
-  <test></test> -->
     <sky :duration="animationDuration" :slidesLength="slidesLength"></sky>
-    <slider :slides="slides" :duration="animationDuration"></slider>
-    <timeline :slides="slides" :duration="animationDuration"></timeline>
-    
-    <!-- <GsapTest></GsapTest> -->
+    <slider :slides="slides" :duration="animationDuration" v-on:shake-plane="onShakePlane"></slider>
+    <timeline :slides="slides" :duration="animationDuration" :shakePlane="shakePlane"></timeline>
 </section>

@@ -1,5 +1,9 @@
 $timeline-element-width: 300px;
 
+:root {
+    --animation-duration: 4s;
+}
+
 :export {
     timelineElementWidth : $timeline-element-width;
 }

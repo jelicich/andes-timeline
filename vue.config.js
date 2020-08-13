@@ -12,13 +12,12 @@ module.exports = {
         }])
     },
     css: {
-        // loaderOptions: {
-        //     sass: {
-        //         sassOptions: {
-        //             prependData: '@import "~@/assets/sass/main.scss"',
-        //         }
-        //     },
-        // },
+        loaderOptions: {
+            scss: {
+                additionalData: '@import "@/styles/mixins.scss";',
+            },
+        },
     },
+    // publicPath: '/timeline/'
 }
   

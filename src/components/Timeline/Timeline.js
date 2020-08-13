@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { TimelineMax, TweenLite, Power1 } from 'gsap';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 // import Util from '../../service/util';
@@ -11,7 +12,7 @@ const BACKWARD = 'backward';
 export default {
     name: 'timeline',
     components: {},
-    props: ['slides', 'duration'],
+    props: ['slides', 'duration', 'shakePlane'],
     data() {
         return {
             state: this.$store.state,
@@ -29,6 +30,9 @@ export default {
             plane: null,
 
             canvasHeight: 400,
+
+            shakeTl: new TimelineMax({repeat:-1}),
+            hasTurned: false,
         }
     },
     computed: {
@@ -42,6 +46,10 @@ export default {
                 this.direction = this.state.activeSlide > this.previousSlide ? FORWARD : BACKWARD;
                 this.moveTimeline(this.state.activeSlide);
             }
+        },
+
+        shakePlane: function() {
+            this.onShakePlaneChange();
         }
     },
     mounted() {
@@ -101,7 +109,7 @@ export default {
                 this.renderer.setSize(window.innerWidth, this.canvasHeight);
                 this.camera.aspect = window.innerWidth / this.canvasHeight;
 
-                this.camera.updateProjectMatrix();
+                this.camera.updateProjectionMatrix();
             })
         },
 
@@ -119,9 +127,12 @@ export default {
                 this.render();
 
                 this.timeline.eventCallback("onComplete", () => {
-                    console.log('rotation reset');
-                    this.plane.rotation.x = 0;
-                    this.plane.rotation.z = 0;    
+                    if(this.hasTurned) {
+                        console.log('rotation reset');
+                        this.plane.rotation.x = 0;
+                        this.plane.rotation.z = 0;    
+                        this.hasTurned = false;
+                    }
                 });
             })
         },
@@ -141,10 +152,11 @@ export default {
                     this.turnPlaneForward();
                 }
 
+                // sorry future me for this calculations
                 this.timeline.to(this.$refs.timeline, {
-                    duration: this.duration - this.turnDuration / 2,
+                    duration: ((this.duration / 2) + (this.duration * 0.25 / 2)), // magic do not touch
                     x:`${-this.liWidth * slideNumber}`,
-                }, '-=' + this.turnDuration/2)
+                }, '-=' + ((this.duration / 2) + (this.duration * 0.25 / 2)) /2) // magic do not touch
 
             } else {
                 this.timeline.to(this.$refs.timeline, {
@@ -160,75 +172,130 @@ export default {
 
         turnPlaneBackwards: function() {
             const tau = Math.PI * 2;
+            this.hasTurned = true;
             this.timeline.to(this.plane.rotation, {
-                duration: 2,
-                x: tau * .10, 
-                y: tau * .25, 
-                z: -tau * .25, 
-                ease: 'power1.inOut'
-            },).to(this.plane.position, {
-                duration: 2,
-                x: -20,
-                ease: 'power1.inOut',
-            }, '-=2').to(this.plane.position, {
-                duration: 1.8,
-                z: 95,
-                x: -30,
-                ease: 'power1.inOut',
-            }, '-=1.8').to(this.plane.position, {
-                duration: 1,
-                x: 0,
-                ease: 'power1.inOut',
-            }, '-=1.0').to(this.plane.position, {
-                duration: 1,
-                z: 0,
-                ease: 'power1.inOut',
-            }, '-=0.5').to(this.plane.rotation, {
-                duration: 1,
-                x: tau * .25, 
-                ease: 'power1.inOut',
-            }, '-=1')  
+                    duration: this.duration / 2,
+                    x: tau * .10, 
+                    y: tau * .25, 
+                    z: -tau * .25, 
+                    ease: 'power1.inOut'
+                },)
+                .to(this.plane.position, {
+                    duration: this.duration / 2,
+                    x: -20,
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration / 2)
+                .to(this.plane.position, {
+                    duration: this.duration * 0.4,
+                    z: 95,
+                    x: -30,
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration * 0.4)
+                .to(this.plane.position, {
+                    duration: this.duration * 0.25,
+                    x: 0,
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration * 0.25)
+                .to(this.plane.position, {
+                    duration: this.duration * 0.25,
+                    z: 0,
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration * 0.25 / 2)
+                .to(this.plane.rotation, {
+                    duration: this.duration * 0.25,
+                    x: tau * .25, 
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration * 0.25)  
         },
 
         turnPlaneForward: function() {
             const tau = Math.PI * 2;
+            this.hasTurned = true;
             this.timeline.to(this.plane.rotation, {
-                duration: 2,
-                x: tau * 0.10,
-                y: -tau * .25,
-                z: tau * 0.25,
-                ease: 'power1.inOut'
-            }).to(this.plane.position, {
-                duration: 2,
-                x: 20,
-                ease: 'power1.inOut',
-            }, '-=2').to(this.plane.position, {
-                duration: 1.8,
-                z: 95,
-                x: 30,
-                ease: 'power1.inOut',
-            }, '-=1.8').to(this.plane.position, {
-                duration: 1,
-                x: 0,
-                ease: 'power1.inOut',
-            }, '-=1.0').to(this.plane.position, {
-                duration: 1,
-                z: 0,
-                ease: 'power1.inOut',
-            }, '-=0.5').to(this.plane.rotation, {
-                duration: 1,
-                x: tau * .25, 
-                ease: 'power1.inOut',
-            }, '-=1')
+                    duration: this.duration / 2,
+                    x: tau * 0.10,
+                    y: -tau * .25,
+                    z: tau * 0.25,
+                    ease: 'power1.inOut'
+                })
+                .to(this.plane.position, {
+                    duration: this.duration / 2,
+                    x: 20,
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration / 2)
+                .to(this.plane.position, {
+                    duration: this.duration * 0.4,
+                    z: 95,
+                    x: 30,
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration * 0.4)
+                .to(this.plane.position, {
+                    duration: this.duration * 0.25,
+                    x: 0,
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration * 0.25)
+                .to(this.plane.position, {
+                    duration: this.duration * 0.25,
+                    z: 0,
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration * 0.25 / 2)
+                .to(this.plane.rotation, {
+                    duration: this.duration * 0.25,
+                    x: tau * .25, 
+                    ease: 'power1.inOut',
+                }, '-=' + this.duration * 0.25)
         },
 
         goTo: function(slide) {
             if(this.timeline.isActive()) {
-                return
+                return;
+            }
+
+            if(slide < 0 || slide > this.slides.length -1) {
+                return;
             }
             this.$store.setActiveSlide(slide);
+        },
+
+        onShakePlaneChange: function() {
+            console.log('plane shake', this.shakePlane);
+            if(this.shakePlane) {
+                
+                if(this.timeline.isActive()) {
+                    setTimeout(() => {
+                        this.onShakePlaneChange();
+                    }, this.duration * 1001);
+
+                    return;
+                }
+                
+                const tau = Math.PI * 2;
+
+                this.shakeTl
+                    .to(this.plane.rotation, 0.2, { 
+                        x: tau * 0.003, 
+                        y: '+=' + tau * 0.003, 
+                        z: tau * 0.006, 
+                        // ease:Power1.easeInOut
+                    })
+                    .to(this.plane.rotation, 0.4, { 
+                        x: -tau * 0.006,
+                        y: '+=' + -tau * 0.006,  
+                        z: -tau * 0.012,
+                        // ease:Power1.easeInOut
+                    })
+                    .to(this.plane.rotation, 0.2, { 
+                        x: 0, 
+                        y: '+=' + tau * 0.003, 
+                        z: 0, 
+                        // ease:Power1.easeInOut
+                    })
+        
+                TweenLite.to(this.plane.rotation, 27, {ease:Power1.easeInOut})
+                TweenLite.to(this.plane.position, {ease:Power1.easeInOut})
+            } else {
+                this.shakeTl.clear();
+            }
         }
     }
 }
-
-

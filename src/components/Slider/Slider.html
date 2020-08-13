@@ -1,6 +1,12 @@
 <section class="slider" id="slider">
+    <div class="custom-background">
+    </div>
     <template v-for="(slide, i) in slides" >
-        <component :key="i" :is="slide.component" :isActive="state.activeSlide === i" :duration="duration"></component>
+        <component :key="i" 
+            :is="slide.component" 
+            :isActive="state.activeSlide === i" 
+            :duration="duration"
+            v-on:shake-plane="handleShake"
+            ></component>
     </template>
-    
 </section>

@@ -6,6 +6,7 @@ import Util from '../../service/util';
 
 const util = new Util();
 const SLIDER_SEL = '#slider';
+const CUSTOM_BG_SEL = '.custom-background';
 
 export default {
     name: 'slider',
@@ -20,6 +21,7 @@ export default {
             tl: gsap.timeline(),
             state: this.$store.state,
             delayTime: 2,
+            touchStart: null,
         };
     },
     computed: {
@@ -27,8 +29,23 @@ export default {
     },
     mounted() {
         this.$store.setTotalSlides = this.slides.length;
+        const sliderEl = document.querySelector(SLIDER_SEL);
+        sliderEl.querySelector(CUSTOM_BG_SEL).style.width = sliderEl.offsetWidth + 'px';
         // window.addEventListener('wheel', this.calculateScroll);
-        window.addEventListener('wheel', this.setSlide);
+        
+        window.addEventListener('load', () => {
+            window.addEventListener('wheel', this.setSlide);
+        
+            // mobile events
+            window.addEventListener('touchstart', (e) => {
+                this.touchStart = e.touches[0].clientX;
+            });
+            
+            window.addEventListener('touchend', this.setSlideMobile);
+
+            console.log('page loaded event listeners registered');
+        })
+        
     },
     watch: {
         state: {
@@ -57,6 +74,23 @@ export default {
             // if at its not at the beginning or end we update the active slide in store
             if (oldSlide !== activeSlide) {
                 this.$store.setActiveSlide(activeSlide);
+            }
+        },
+
+        setSlideMobile: function(e) {
+            if (this.tl && this.tl.isActive()) {
+                return;
+            }
+            const touchMove = e.changedTouches[0].clientX;
+            let currentSlide = this.state.activeSlide;
+            if (this.touchStart > touchMove) {
+                currentSlide = currentSlide+1 > this.slides.length-1 ? this.slides.length-1 : currentSlide+1;                
+            } else {
+                currentSlide = currentSlide-1 < 0 ? 0 : currentSlide-1;                   
+            }
+
+            if (currentSlide !== this.state.activeSlide) {
+                this.$store.setActiveSlide(currentSlide);
             }
         },
 
@@ -148,6 +182,10 @@ export default {
                     z: matrixValues[14]
                 }
             }
+        },
+
+        handleShake: function(status) {
+            this.$emit('shake-plane', status);
         }
     },
 };

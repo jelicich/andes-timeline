@@ -1,19 +1,18 @@
-import Test from '../../components/test';
-import GsapTest from '../../components/GsapTests';
 import Slider from '../../components/Slider';
 import Sky from '../../components/Sky';
 import Timeline from '../../components/Timeline';
+// import Util from '../../service/util';
+
+// const util = new Util();
 
 export default {
     name: 'home',
     components: {
-        Test,
-        GsapTest,
         Slider,
         Sky,
         Timeline
     },
-    props: [],
+    props: ['animationDuration'],
     data() {
         return {
             slides: [
@@ -33,7 +32,8 @@ export default {
                     component: 'revolution-slide'
                 },
             ],
-            animationDuration: 4
+            // animationDuration: util.isMobile() ? 2 : 4,
+            shakePlane: false,
             //slidesLength: this.slides.length
         };
     },
@@ -46,6 +46,8 @@ export default {
 
     },
     methods: {
-
+        onShakePlane: function(status) {
+            this.shakePlane = status;
+        }
     },
 };

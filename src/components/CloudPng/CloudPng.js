@@ -1,4 +1,4 @@
-import gsap from 'gsap';
+// import gsap from 'gsap';
 import { TimelineMax, TweenLite, Power1 } from 'gsap';
 
 export default {
@@ -7,7 +7,7 @@ export default {
     props: ['imgNumber'],
     data() {
         return {
-            tl: gsap.timeline(),
+            tlCloud: null,
         }
     },
     computed: {
@@ -18,10 +18,10 @@ export default {
     },
     methods: {
         animateCloud: function() {
-            const tlCloud = new TimelineMax({repeat:-1});
+            this.tlCloud = new TimelineMax({repeat:-1});
             const cloud = this.$refs.cloudPng;
-            /*Can Animation*/
-            tlCloud
+            
+            this.tlCloud
                 .to(cloud, 3, { 
                     y:'-=10', 
                     ease:Power1.easeInOut

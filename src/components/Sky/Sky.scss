@@ -4,6 +4,7 @@
     background: url('../../assets/clouds-bg2.png') repeat-x;
     height: 100vh;
     background-size: auto 40vh;
+    pointer-events: none;
 
     .cloud-container {
         position: absolute;
