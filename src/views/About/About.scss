@@ -1,0 +1,45 @@
+.about {
+    // background-image: url('../../assets/bg1.png');
+    background-color: #62a0d8;
+    background-repeat: repeat-x;
+    background-size: contain;
+    padding-top: 64px;
+    height: 100vh;
+
+    .about-inner {
+        height: calc(100vh - 64px);
+        background: #fff;
+        overflow-y: scroll;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    .img-grid {
+        -webkit-filter: grayscale(100%);
+        -moz-filter:    grayscale(100%);
+        -ms-filter:     grayscale(100%);
+        -o-filter:      grayscale(100%);
+        filter: gray; 
+
+        -webkit-transition: .5s -webkit-filter linear;
+        -moz-transition: .5s -moz-filter linear;
+        -moz-transition: .5s filter linear;
+        -ms-transition: .5s -ms-filter linear;
+        -o-transition: .5s -o-filter linear;
+        transition: .5s filter linear, .5s -webkit-filter linear;
+    }
+
+    .img-grid:hover {
+        filter: none;   
+    }
+
+    .img-container {
+        height: 100px;
+    }
+}
