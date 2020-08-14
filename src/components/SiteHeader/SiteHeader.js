@@ -1,3 +1,4 @@
+const SLIDER_SEL = '#slider';
 
 export default {
     name: 'site-header',
@@ -11,11 +12,16 @@ export default {
     computed: {
 
     },
+    watch: {
+        drawer: function() {
+            console.log('changed drawer')
+            const sliderClass = 'isBlocked';
+            document.querySelector(SLIDER_SEL).classList.toggle(sliderClass, this.drawer);
+        }
+    },
     mounted() {
-
     },
     methods: {
-
     }
 }
 

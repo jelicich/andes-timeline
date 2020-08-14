@@ -7,6 +7,7 @@ import Util from '../../service/util';
 const util = new Util();
 const SLIDER_SEL = '#slider';
 const CUSTOM_BG_SEL = '.custom-background';
+const BLOCKED_CLASS = 'isBlocked';
 
 export default {
     name: 'slider',
@@ -58,8 +59,9 @@ export default {
     },
     methods: {
         setSlide: function(e) {
+            const sliderEl = document.querySelector(SLIDER_SEL);
             // if the container is animating the wheel won't work
-            if (this.tl && this.tl.isActive()) {
+            if (this.tl && this.tl.isActive() || sliderEl.classList.contains(BLOCKED_CLASS)) {
                 return;
             }
             // temp variable to see if we're at the beginning or end
@@ -78,20 +80,29 @@ export default {
         },
 
         setSlideMobile: function(e) {
-            if (this.tl && this.tl.isActive()) {
+            const sliderEl = document.querySelector(SLIDER_SEL);
+            if (this.tl && this.tl.isActive() || sliderEl.classList.contains(BLOCKED_CLASS)) {
                 return;
             }
-            const touchMove = e.changedTouches[0].clientX;
+            const touchEnd = e.changedTouches[0].clientX;
             let currentSlide = this.state.activeSlide;
-            if (this.touchStart > touchMove) {
-                currentSlide = currentSlide+1 > this.slides.length-1 ? this.slides.length-1 : currentSlide+1;                
-            } else {
-                currentSlide = currentSlide-1 < 0 ? 0 : currentSlide-1;                   
-            }
+            
+            // check if slide gesture is long enough to slide
+            // we don't want a slightly slide to change slides
+            const isSlidable = Math.abs(this.touchStart - touchEnd) > 20;
 
-            if (currentSlide !== this.state.activeSlide) {
-                this.$store.setActiveSlide(currentSlide);
+            if(isSlidable) {
+                if (this.touchStart > touchEnd) {
+                    currentSlide = currentSlide+1 > this.slides.length-1 ? this.slides.length-1 : currentSlide+1;                
+                } else {
+                    currentSlide = currentSlide-1 < 0 ? 0 : currentSlide-1;                   
+                }
+    
+                if (currentSlide !== this.state.activeSlide) {
+                    this.$store.setActiveSlide(currentSlide);
+                }
             }
+            
         },
 
         animateSlide: function(slideNumber) {

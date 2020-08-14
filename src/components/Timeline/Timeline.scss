@@ -74,25 +74,25 @@
         }
     }
 
-    .timeline-nav-left,
-    .timeline-nav-right {
-        position: absolute;
-        top: 0;
-        z-index: 500;
-        background: rgba(11, 12, 65, 0.5);
-        border-radius: 50%;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    // .timeline-nav-left,
+    // .timeline-nav-right {
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: 500;
+    //     background: rgba(11, 12, 65, 0.5);
+    //     border-radius: 50%;
+    //     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         
-        .v-icon {
-            color: #fff;
-            font-size: 4rem;
+    //     .v-icon {
+    //         color: #fff;
+    //         font-size: 4rem;
         
-        }
-    }
+    //     }
+    // }
 
-    .timeline-nav-right {
-        right: 0
-    }
+    // .timeline-nav-right {
+    //     right: 0
+    // }
 
     canvas {
         pointer-events: none;

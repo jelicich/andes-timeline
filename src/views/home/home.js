@@ -1,9 +1,10 @@
 import Slider from '../../components/Slider';
 import Sky from '../../components/Sky';
 import Timeline from '../../components/Timeline';
-// import Util from '../../service/util';
+import Util from '../../service/util';
 
 // const util = new Util();
+const SLIDER_SEL = '#slider';
 
 export default {
     name: 'home',
@@ -35,6 +36,7 @@ export default {
             // animationDuration: util.isMobile() ? 2 : 4,
             shakePlane: false,
             //slidesLength: this.slides.length
+            util: new Util(),
         };
     },
     computed: {
@@ -43,11 +45,20 @@ export default {
         }
     },
     mounted() {
-
+        if(this.util.isMobile()) {
+            const sliderClass = 'isBlocked';
+            document.querySelector(SLIDER_SEL).classList.add(sliderClass);
+        }
     },
     methods: {
         onShakePlane: function(status) {
             this.shakePlane = status;
+        },
+
+        closeIntro: function() {
+            const sliderClass = 'isBlocked';
+            document.querySelector(SLIDER_SEL).classList.remove(sliderClass);
+            this.$refs.intro.parentElement.removeChild(this.$refs.intro);
         }
     },
 };

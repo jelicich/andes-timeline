@@ -12,9 +12,10 @@ const vuetify = new Vuetify({
     theme: {
         themes: {
             light: {
-                primary: '#0074c5',
+                primary: '#095cb4',
                 // secondary: '#b0bec5',
-                // anchor: '#8c9eff',
+                anchor: '#022d5a',
+                accent: '#022d5a'
             },
         },
     },

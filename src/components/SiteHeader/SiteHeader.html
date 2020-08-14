@@ -14,40 +14,56 @@
 
             <v-spacer></v-spacer>
 
-            <v-btn icon href="https://twitter.com/empleados_andes" target="_blank">
+            <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://twitter.com/empleados_andes" target="_blank">
                 <v-icon>mdi-twitter</v-icon>
             </v-btn>
 
-            <v-btn icon href="https://www.instagram.com/empleados_argentinos_andes/" target="_blank">
+            <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://www.instagram.com/empleados_argentinos_andes/" target="_blank">
                 <v-icon>mdi-instagram</v-icon>
             </v-btn>
 
-            <v-btn icon href="https://www.facebook.com/empleados.argentinos.andes" target="_blank">
+            <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://www.facebook.com/empleados.argentinos.andes" target="_blank">
                 <v-icon>mdi-facebook</v-icon>
             </v-btn>
 
         </v-app-bar>
 
         <v-navigation-drawer v-model="drawer" absolute temporary>
-            <v-list nav dense>
-                <v-list-item-group active-class="deep-purple--text text--accent-4">
-                    <v-list-item>
-                        <v-list-item-icon>
-                            <v-icon>mdi-home</v-icon>
-                        </v-list-item-icon>
-                        <v-list-item-title>Home</v-list-item-title>
-                    </v-list-item>
-
-                    <v-list-item>
-                        <v-list-item-icon>
-                            <v-icon>mdi-account</v-icon>
-                        </v-list-item-icon>
-                        <v-list-item-title>Account</v-list-item-title>
-                    </v-list-item>
-
-                </v-list-item-group>
-            </v-list>
-            
+            <div>
+                <div v-if="$vuetify.breakpoint.smAndDown" class="social-icons-drawer">
+                    <v-btn icon href="https://twitter.com/empleados_andes" target="_blank">
+                        <v-icon>mdi-twitter</v-icon>
+                    </v-btn>
+        
+                    <v-btn icon href="https://www.instagram.com/empleados_argentinos_andes/" target="_blank">
+                        <v-icon>mdi-instagram</v-icon>
+                    </v-btn>
+        
+                    <v-btn icon href="https://www.facebook.com/empleados.argentinos.andes" target="_blank">
+                        <v-icon>mdi-facebook</v-icon>
+                    </v-btn>
+                </div>
+                <hr v-if="$vuetify.breakpoint.smAndDown">
+                <v-list nav dense>
+                    <v-list-item-group >
+                        <v-list-item>
+                            <v-list-item-icon>
+                                <v-icon>mdi-information-outline</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>Empleados Andes</v-list-item-title>
+                        </v-list-item>
+    
+                        <!-- <v-list-item>
+                            <v-list-item-icon>
+                                <v-icon>mdi-account</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>Account</v-list-item-title>
+                        </v-list-item> -->
+    
+                    </v-list-item-group>
+                </v-list>
+                
+            </div>
             
             <div class="text-center">
                 <a class="dev-contact" href="https://www.linkedin.com/in/esteban-jelicich-84279b39/" target="_blank">

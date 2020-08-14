@@ -1,4 +1,11 @@
 <section class="home">
+    <div v-if="util.isMobile()" class="instructions" ref="intro">
+        <div class="text-center">
+            Deslizá <v-icon>mdi-gesture-swipe</v-icon>
+            <br>
+            <v-btn depressed small color="primary" @click="closeIntro()" class="mt-3">Ok</v-btn>
+        </div>
+    </div>
     <sky :duration="animationDuration" :slidesLength="slidesLength"></sky>
     <slider :slides="slides" :duration="animationDuration" v-on:shake-plane="onShakePlane"></slider>
     <timeline :slides="slides" :duration="animationDuration" :shakePlane="shakePlane"></timeline>
