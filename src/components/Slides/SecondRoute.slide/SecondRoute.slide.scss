@@ -1,0 +1,64 @@
+.second-route-slide {
+    display: flex;
+    color: #fff;
+
+    .inner {
+        margin: auto;
+        position: relative;
+        display: flex;
+    }
+
+    .title-1 {
+        font-size: 10rem;
+        display: block;
+        line-height: 0.4;
+        margin-left: 6.8rem;
+
+        @include sm-down {
+            font-size: 4rem;
+            margin-left: 7.5rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .title-2 {
+        font-size: 4.2rem;
+        line-height: 0.5;
+        
+        @include sm-down {
+            font-size: 2.5rem;
+            margin-left: 1.5rem;
+        }
+    }
+
+    .date {
+        position: absolute;
+        top: 39px;
+        left: 0px;
+        text-align: right;
+        line-height: 0.8;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 3rem;
+
+        @include sm-down {
+            font-size: 2rem;
+            left: 28px;
+            top: 17px;
+        }
+    }
+
+    .description {
+        font-size: 2rem;
+        font-style: italic;
+        line-height: 1;
+        
+        @include sm-down {
+            font-size: 1.6rem;
+            padding: 0 30px;
+
+            br {
+                display: none;
+            }
+        }
+    }
+}

@@ -15,7 +15,7 @@ import Util from './service/util'
 const util = new Util();
 const SPLASH_SEL = '#splash-screen';
 
-export const animationDuration = util.isMobile() ? 2 : 4;
+export const animationDuration = util.isMobile() ? 2 : 3;
 
 export default {
     name: 'App',
@@ -24,7 +24,7 @@ export default {
         SiteHeader
     },
     data: () => ({
-        animationDuration: util.isMobile() ? 2 : 4,
+        // animationDuration: util.isMobile() ? 2 : 2,
     }),
     mounted() {
         // set duration for css transition
@@ -36,21 +36,13 @@ export default {
             splash.style.opacity = 0;
             setTimeout(() => {
                 splash.parentElement.removeChild(splash);
-            }, this.animationDuration * 1000)
+            }, animationDuration * 1000)
         })
     },
     watch: {
-        $route: function(to, from) {
-            if(from.name === 'Home') {
-                this.removeCanvas();
-            }
-        }
     },
     methods: {
-        removeCanvas: function() {
-            const canvas = document.querySelector('canvas');
-            canvas.parentElement.removeChild(canvas);
-        }
+
     }
 };
 </script>

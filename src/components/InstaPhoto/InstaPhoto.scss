@@ -1,0 +1,26 @@
+.insta-photo {
+    background: #fff;
+    transform: rotate(-5deg);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    
+    @include sm-down {
+        max-width: 90vw !important;
+    }
+    
+    p {
+        font-family: 'Indie Flower', cursive;
+        color: #200346;    
+        font-size: 1.8rem;
+        width: 95%;
+        margin: auto;
+    }
+
+    .insta-photo-inner {
+        width: 95%;
+        height: 75%;
+        margin: 2.5% auto 0; 
+    }
+
+}

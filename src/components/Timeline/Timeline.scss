@@ -47,6 +47,10 @@
             display: flex;
             margin-left: 50vw;
 
+            @include sm-down {
+                font-size: 1.4rem;
+            }
+
             li {
                 color: #fff;
                 padding-left: 2rem;

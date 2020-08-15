@@ -1,7 +1,11 @@
 import gsap from 'gsap';
-import StartSlide from '../Slides/Start.slide'
-import SecondPlaneSlide from '../Slides/SecondPlane.slide'
-import RevolutionSlide from '../Slides/Revolution.slide'
+import StartSlide from '../Slides/Start.slide';
+import SecondPlaneSlide from '../Slides/SecondPlane.slide';
+import RevolutionSlide from '../Slides/Revolution.slide';
+import SecondRouteSlide from '../Slides/SecondRoute.slide';
+import ThirdPlaneSlide from '../Slides/ThirdPlane.slide';
+import BombardierSlide from '../Slides/Bombardier.slide';
+
 import Util from '../../service/util';
 
 const util = new Util();
@@ -14,7 +18,10 @@ export default {
     components: {
         StartSlide,
         SecondPlaneSlide,
-        RevolutionSlide
+        SecondRouteSlide,
+        RevolutionSlide,
+        ThirdPlaneSlide,
+        BombardierSlide
     },
     props: ['slides', 'duration', 'isDelayed'],
     data() {
@@ -29,24 +36,20 @@ export default {
 
     },
     mounted() {
-        this.$store.setTotalSlides = this.slides.length;
+        // this.$store.setTotalSlides(this.slides.length);
         const sliderEl = document.querySelector(SLIDER_SEL);
         sliderEl.querySelector(CUSTOM_BG_SEL).style.width = sliderEl.offsetWidth + 'px';
         // window.addEventListener('wheel', this.calculateScroll);
-        
-        window.addEventListener('load', () => {
-            window.addEventListener('wheel', this.setSlide);
-        
-            // mobile events
-            window.addEventListener('touchstart', (e) => {
-                this.touchStart = e.touches[0].clientX;
-            });
-            
-            window.addEventListener('touchend', this.setSlideMobile);
 
-            console.log('page loaded event listeners registered');
-        })
+        window.addEventListener('wheel', this.setSlide);
+    
+        // mobile events
+        window.addEventListener('touchstart', this.setTouchStart);
         
+        window.addEventListener('touchend', this.setSlideMobile);
+
+        console.log('page loaded event listeners registered');
+
     },
     watch: {
         state: {
@@ -116,11 +119,19 @@ export default {
             })
         },
 
+        setTouchStart: function(e) {
+            this.touchStart = e.touches[0].clientX;
+        },
         
         // BELLOW: experimental mimic scrollTrigger
         calculateScroll(e) {
             console.log('delta:', e.deltaY);
             this.moveSlide(e.deltaY);
+        },
+
+        removeCanvas: function() {
+            const canvas = document.querySelector('canvas');
+            canvas.parentElement.removeChild(canvas);
         },
 
         // move accordingly to scroll 
@@ -199,4 +210,15 @@ export default {
             this.$emit('shake-plane', status);
         }
     },
+    beforeDestroy: function(){
+        this.removeCanvas();
+        this.$store.setActiveSlide(0);
+
+        window.removeEventListener('wheel', this.setSlide);
+        
+        // mobile events
+        window.removeEventListener('touchstart', this.setTouchStart);
+        
+        window.removeEventListener('touchend', this.setSlideMobile);
+    }
 };

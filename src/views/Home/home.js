@@ -23,15 +23,30 @@ export default {
                     component: 'start-slide'
                 },
                 {
+                    title: 'Segunda Ruta',
+                    date: 'Nov 2006',
+                    component: 'second-route-slide'
+                },
+                {
                     title: 'Crece',
                     date: 'Dic 2006',
                     component: 'second-plane-slide'
                 },
                 {
-                    title: '"Revolución"',
-                    date: 'Jun 2017',
-                    component: 'revolution-slide'
+                    title: 'Nuevo MD',
+                    date: 'Dic 2007',
+                    component: 'third-plane-slide'
                 },
+                {
+                    title: 'Aviones estratégicos',
+                    date: 'Dic 2009',
+                    component: 'bombardier-slide'
+                },
+                // {
+                //     title: '"Revolución"',
+                //     date: 'Jun 2017',
+                //     component: 'revolution-slide'
+                // },
             ],
             // animationDuration: util.isMobile() ? 2 : 4,
             shakePlane: false,

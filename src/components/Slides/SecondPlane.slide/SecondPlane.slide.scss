@@ -12,12 +12,22 @@
         font-size: 10rem;
         display: block;
         line-height: 0.5;
+        
+        @include sm-down {
+            font-size: 4rem;
+            margin-left: 3.5rem;
+        }
     }
 
     .title-2 {
         font-size: 5rem;
         line-height: 0.5;
         margin-left: 6.5rem;
+
+        @include sm-down {
+            margin-left: 6rem;
+            font-size: 2.5rem;
+        }
     }
 
     .date {
@@ -28,11 +38,26 @@
         line-height: 0.8;
         color: rgba(255, 255, 255, 0.5);
         font-size: 4rem;
+
+        @include sm-down {
+            font-size: 2rem;
+            top: -23px;
+            left: 12px;
+        }
     }
 
     .description {
         font-size: 2rem;
         font-style: italic;
         line-height: 1;
+
+        @include sm-down {
+            font-size: 1.6rem;
+            padding: 0 30px;
+
+            br {
+                display: none;
+            }
+        }
     }
 }
