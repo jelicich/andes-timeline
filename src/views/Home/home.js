@@ -62,6 +62,11 @@ export default {
                     date: 'Ago 2018',
                     component: 'revolution-slide'
                 },
+                {
+                    title: 'Devolución',
+                    date: 'Oct 2018',
+                    component: 'return-slide'
+                },
             ],
             // animationDuration: util.isMobile() ? 2 : 4,
             shakePlane: false,

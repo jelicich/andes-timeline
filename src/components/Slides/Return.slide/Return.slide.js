@@ -2,20 +2,23 @@ import SlideMixin from '../../../mixins/SlideMixin';
 import CloudPng from '../../CloudPng';
 import InstaPhoto from '../../InstaPhoto';
 
+import gsap from 'gsap';
+
 const BG_SLIDER_SEL = '#slider .custom-background';
 
 export default {
-    name: 'revolution-slide',
+    name: 'return-slide',
     mixins: [SlideMixin],
     components: {
         CloudPng,
         InstaPhoto
     },
-    props: [],
+    props: ['isActive'],
     data() {
         return {
             state: this.$store.state,
             // backgroundClass: 'cloudy',
+            tl: gsap.timeline(),
             hasToClear: false,
 
             clouds: 5,
@@ -37,8 +40,8 @@ export default {
                     // setTimeout(() => {
                     //     document.querySelector(BG_SLIDER_SEL).classList.remove('cloudy');
                     // }, this.duration * 1000)
-
-                    // this.$emit('shake-plane', false);
+                    
+                    this.$emit('shake-plane', false);
                 }
             }
         }
@@ -50,7 +53,20 @@ export default {
             document.querySelector(BG_SLIDER_SEL).classList.add('isVisible');
             document.querySelector(BG_SLIDER_SEL).classList.add('cloudy');
             
-            // this.$emit('shake-plane', true);
+            // this.tl.to(SLIDER_SEL, {
+            //         duration: this.duration,
+            //         ease: "power4.out",
+            //         // backgroundImage: 'linear-gradient(0deg, #d2d2d2 0%, #8f8f8f 50%, #151515 100%)',
+            //         backgroundImage: `url(${backgroundGrayUrl})`,// "-webkit-linear-gradient(top, #d2d2d2, #151515)",
+            //         // background:"linear-gradient(to top, #d2d2d2, #151515)"
+            //     })
+            //     .to(this.$refs.cloudsContainer, {
+            //         duration: this.duration / 2,
+            //         opacity: 1,
+            //         ease: "power4.out",
+            //     }, '-=' + this.duration * .75);
+
+            this.$emit('shake-plane', true);
 
             this.hasToClear = true;
         },

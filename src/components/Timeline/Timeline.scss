@@ -61,6 +61,10 @@
                 flex: 0 0 $timeline-element-width;
                 pointer-events: auto;
                 
+                @include sm-down {
+                    padding-bottom: 28px;
+                }
+                
                 &::before {
                     content: "";
                     position: absolute;

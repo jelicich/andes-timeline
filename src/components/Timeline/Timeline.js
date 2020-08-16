@@ -28,6 +28,7 @@ export default {
             camera: null,
             renderer: null,
             plane: null,
+            animationReqId: null,
 
             canvasHeight: 400,
 
@@ -138,7 +139,7 @@ export default {
         },
 
         render: function() {
-            requestAnimationFrame(this.render);
+            this.animationReqId = requestAnimationFrame(this.render);
             this.renderer.render(this.scene, this.camera);
         },
 
@@ -296,6 +297,18 @@ export default {
             } else {
                 this.shakeTl.clear();
             }
-        }
+        },
+
+        removeCanvas: function() {
+            const canvas = document.querySelector('canvas');
+            canvas.parentElement.removeChild(canvas);
+        },
+    },
+   
+    beforeDestroy: function(){
+        this.removeCanvas();
+        
+        cancelAnimationFrame(this.animationReqId);
+        this.animationReqId = null;
     }
 }

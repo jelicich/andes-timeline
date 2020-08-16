@@ -8,6 +8,7 @@ import BombardierSlide from '../Slides/Bombardier.slide';
 import AirbusSlide from '../Slides/Airbus.slide';
 import BoeingSlide from '../Slides/Boeing.slide';
 import TheMomentSlide from '../Slides/TheMoment.slide';
+import ReturnSlide from '../Slides/Return.slide';
 
 import Util from '../../service/util';
 
@@ -27,7 +28,8 @@ export default {
         BombardierSlide,
         AirbusSlide,
         BoeingSlide,
-        TheMomentSlide
+        TheMomentSlide,
+        ReturnSlide
     },
     props: ['slides', 'duration', 'isDelayed'],
     data() {
@@ -135,10 +137,10 @@ export default {
             this.moveSlide(e.deltaY);
         },
 
-        removeCanvas: function() {
-            const canvas = document.querySelector('canvas');
-            canvas.parentElement.removeChild(canvas);
-        },
+        // removeCanvas: function() {
+        //     const canvas = document.querySelector('canvas');
+        //     canvas.parentElement.removeChild(canvas);
+        // },
 
         // move accordingly to scroll 
         moveSlide: function(deltaY) {
@@ -217,7 +219,7 @@ export default {
         }
     },
     beforeDestroy: function(){
-        this.removeCanvas();
+        // this.removeCanvas();
         this.$store.setActiveSlide(0);
 
         window.removeEventListener('wheel', this.setSlide);

@@ -11,9 +11,11 @@
         font-size: 1.8rem;
         font-weight: bold;
         display: flex;
-
+        flex-direction: column;
+        justify-content: center;
+        
         div {
-            margin: auto;
+            
 
             .v-icon {
                 color: #fff;

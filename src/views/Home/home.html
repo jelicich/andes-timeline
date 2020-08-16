@@ -1,8 +1,13 @@
 <section class="home">
-    <div v-if="util.isMobile() && isFirstLoad" class="instructions" ref="intro">
+    <div v-if="isFirstLoad" class="instructions" ref="intro">
         <div class="text-center">
-            Deslizá <v-icon>mdi-gesture-swipe</v-icon>
-            <br>
+            <p>Esta es una guía interactiva para conocer la historia y entender la problemática de los empleados de Andes Líneas Aéreas.</p>
+        </div>
+        <div class="text-center" v-if="util.isMobile()">
+            Deslizá para moverte en la línea de tiempo<v-icon>mdi-gesture-swipe</v-icon>
+            
+        </div>
+        <div class="text-center">
             <v-btn depressed small color="primary" @click="closeIntro()" class="mt-3">Ok</v-btn>
         </div>
     </div>
