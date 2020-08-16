@@ -5,6 +5,9 @@ import RevolutionSlide from '../Slides/Revolution.slide';
 import SecondRouteSlide from '../Slides/SecondRoute.slide';
 import ThirdPlaneSlide from '../Slides/ThirdPlane.slide';
 import BombardierSlide from '../Slides/Bombardier.slide';
+import AirbusSlide from '../Slides/Airbus.slide';
+import BoeingSlide from '../Slides/Boeing.slide';
+import TheMomentSlide from '../Slides/TheMoment.slide';
 
 import Util from '../../service/util';
 
@@ -21,7 +24,10 @@ export default {
         SecondRouteSlide,
         RevolutionSlide,
         ThirdPlaneSlide,
-        BombardierSlide
+        BombardierSlide,
+        AirbusSlide,
+        BoeingSlide,
+        TheMomentSlide
     },
     props: ['slides', 'duration', 'isDelayed'],
     data() {

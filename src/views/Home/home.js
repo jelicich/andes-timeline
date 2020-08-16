@@ -42,16 +42,33 @@ export default {
                     date: 'Dic 2009',
                     component: 'bombardier-slide'
                 },
-                // {
-                //     title: '"Revolución"',
-                //     date: 'Jun 2017',
-                //     component: 'revolution-slide'
-                // },
+                {
+                    title: 'Airbus',
+                    date: 'Ene 2012',
+                    component: 'airbus-slide'
+                },
+                {
+                    title: 'Expansión',
+                    date: 'May 2017',
+                    component: 'boeing-slide'
+                },
+                {
+                    title: 'La Cumbre',
+                    date: 'Mar 2018',
+                    component: 'the-moment-slide'
+                },
+                {
+                    title: 'Principio del fin',
+                    date: 'Ago 2018',
+                    component: 'revolution-slide'
+                },
             ],
             // animationDuration: util.isMobile() ? 2 : 4,
             shakePlane: false,
             //slidesLength: this.slides.length
             util: new Util(),
+
+            isFirstLoad: window.andesTimeline.isFirstLoad,
         };
     },
     computed: {

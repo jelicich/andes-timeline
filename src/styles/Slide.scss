@@ -10,6 +10,12 @@
 
         @include sm-down {
             flex-direction: column;
+
+            .description {
+                span {
+                    padding-left: 0 !important;
+                }
+            }
         }
     }
 }

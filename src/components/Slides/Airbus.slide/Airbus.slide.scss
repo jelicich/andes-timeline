@@ -1,4 +1,4 @@
-.revolution-slide {
+.airbus-slide {
     display: flex;
     color: #fff;
 
@@ -11,7 +11,7 @@
     .title-1 {
         font-size: 10rem;
         display: block;
-        line-height: 0.45;
+        line-height: 0.5;
 
         @include sm-down {
             font-size: 4rem;
@@ -20,41 +20,37 @@
     }
 
     .title-2 {
-        font-size: 4.5rem;
+        font-size: 5rem;
         line-height: 0.5;
-        margin-left: 9rem;
+        margin-left: 6.5rem;
         
         @include sm-down {
-            font-size: 2rem;
-            margin-left: 6.5rem;
+            font-size: 2.5rem;
+            margin-left: 10.5rem;
         }
     }
-
+    
     .title-3 {
-        font-size: 5rem;
-        line-height: 1;
-        margin-left: 5.5rem;
-        color: #272727;
+        font-size: 7.4rem;
 
         @include sm-down {
-            font-size: 2.5rem;
-            margin-left: 3.7rem;
+            font-size: 3rem;
         }
     }
 
     .date {
         position: absolute;
-        top: -55px;
-        left: 5px;
+        top: -30px;
+        left: 157px;
         text-align: right;
         line-height: 0.8;
         color: rgba(255, 255, 255, 0.5);
-        font-size: 4rem;        
+        font-size: 4rem;
 
         @include sm-down {
             font-size: 2rem;
             top: -25px;
-            left: 18px;
+            left: 39px;
         }
     }
 
@@ -62,7 +58,6 @@
         font-size: 2rem;
         font-style: italic;
         line-height: 1;
-        white-space: pre-wrap;
 
         @include sm-down {
             font-size: 1.6rem;
@@ -73,26 +68,4 @@
             }
         }
     }
-
-    .insta-photo {
-        @include sm-down {
-            width: 60vw !important;
-            height: 40vw !important;
-            margin-left: 30px !important; 
-        }
-    }
-    
-    .clouds-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        opacity: 0;
-        
-        width: 100vw;
-        height: 100vh;
-        background: url('../../../assets/clouds.png') repeat-x;
-        background-size: auto 40vh;
-    }
-
 }

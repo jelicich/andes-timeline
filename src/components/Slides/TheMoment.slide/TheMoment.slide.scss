@@ -1,4 +1,4 @@
-.revolution-slide {
+.the-moment-slide {
     display: flex;
     color: #fff;
 
@@ -20,32 +20,32 @@
     }
 
     .title-2 {
-        font-size: 4.5rem;
+        font-size: 5rem;
         line-height: 0.5;
-        margin-left: 9rem;
+        margin-left: 5.3rem;
         
         @include sm-down {
             font-size: 2rem;
-            margin-left: 6.5rem;
+            margin-left: 5rem;
         }
     }
 
     .title-3 {
         font-size: 5rem;
         line-height: 1;
-        margin-left: 5.5rem;
-        color: #272727;
+        margin-left: 21rem;
+        color: rgb(24, 24, 124);
 
         @include sm-down {
             font-size: 2.5rem;
-            margin-left: 3.7rem;
+            margin-left: 12.7rem;
         }
     }
 
     .date {
         position: absolute;
-        top: -55px;
-        left: 5px;
+        top: 94px;
+        left: -4px;
         text-align: right;
         line-height: 0.8;
         color: rgba(255, 255, 255, 0.5);
@@ -53,8 +53,8 @@
 
         @include sm-down {
             font-size: 2rem;
-            top: -25px;
-            left: 18px;
+            top: 40px;
+            left: 30px;
         }
     }
 
@@ -81,18 +81,4 @@
             margin-left: 30px !important; 
         }
     }
-    
-    .clouds-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        opacity: 0;
-        
-        width: 100vw;
-        height: 100vh;
-        background: url('../../../assets/clouds.png') repeat-x;
-        background-size: auto 40vh;
-    }
-
 }

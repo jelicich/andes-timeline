@@ -1,5 +1,7 @@
 import SlideMixin from '../../../mixins/SlideMixin';
 import CloudPng from '../../CloudPng';
+import InstaPhoto from '../../InstaPhoto';
+
 import gsap from 'gsap';
 
 const BG_SLIDER_SEL = '#slider .custom-background';
@@ -8,7 +10,8 @@ export default {
     name: 'revolution-slide',
     mixins: [SlideMixin],
     components: {
-        CloudPng
+        CloudPng,
+        InstaPhoto
     },
     props: ['isActive'],
     data() {

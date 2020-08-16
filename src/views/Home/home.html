@@ -1,5 +1,5 @@
 <section class="home">
-    <div v-if="util.isMobile()" class="instructions" ref="intro">
+    <div v-if="util.isMobile() && isFirstLoad" class="instructions" ref="intro">
         <div class="text-center">
             Deslizá <v-icon>mdi-gesture-swipe</v-icon>
             <br>

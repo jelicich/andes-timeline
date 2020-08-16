@@ -17,6 +17,10 @@ const SPLASH_SEL = '#splash-screen';
 
 export const animationDuration = util.isMobile() ? 2 : 3;
 
+window.andesTimeline = {
+    isFirstLoad: true,
+}
+
 export default {
     name: 'App',
     components: {
@@ -38,6 +42,7 @@ export default {
                 splash.parentElement.removeChild(splash);
             }, animationDuration * 1000)
         })
+        window.andesTimeline.isFirstLoad = false;
     },
     watch: {
     },

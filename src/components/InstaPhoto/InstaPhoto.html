@@ -1,7 +1,6 @@
-<div class="insta-photo" :style="{width: width, height: height, transform: `rotate(${rotation})`}">
+<div class="insta-photo" :style="{width: width, height: height, transform: `rotate(${rotation}deg)`}">
     <div class="insta-photo-inner">
         <v-img height="100%" width="100%" :src="require(`../../assets/${fileName}`)"></v-img>
     </div>
     <p> {{ note }}</p>
 </div>
-
