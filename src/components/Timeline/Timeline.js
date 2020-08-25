@@ -2,12 +2,13 @@ import gsap from 'gsap';
 import { TimelineMax, TweenLite, Power1 } from 'gsap';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-// import Util from '../../service/util';
+import Util from '../../service/util';
 // import variables from '../../styles/variables.scss';
 
 // const util = new Util();
 const FORWARD = 'forward';
 const BACKWARD = 'backward';
+const util = new Util();
 
 export default {
     name: 'timeline',
@@ -30,14 +31,16 @@ export default {
             plane: null,
             animationReqId: null,
 
-            canvasHeight: 400,
+            
 
             shakeTl: new TimelineMax({repeat:-1}),
             hasTurned: false,
         }
     },
     computed: {
-
+        canvasHeight: function() {
+            return util.isMobile() ? 300 : 400; 
+        }
     },
     watch: {
         state: {
@@ -107,10 +110,10 @@ export default {
             document.body.appendChild(this.renderer.domElement);
 
             window.addEventListener('resize', () => {
-                this.renderer.setSize(window.innerWidth, this.canvasHeight);
                 this.camera.aspect = window.innerWidth / this.canvasHeight;
-
                 this.camera.updateProjectionMatrix();
+
+                this.renderer.setSize(window.innerWidth, this.canvasHeight);
             })
         },
 
@@ -172,6 +175,9 @@ export default {
         },
 
         turnPlaneBackwards: function() {
+            this.$emit('shake-plane', false);
+            this.shakeTl.clear();
+
             const tau = Math.PI * 2;
             this.hasTurned = true;
             this.timeline.to(this.plane.rotation, {
@@ -210,6 +216,9 @@ export default {
         },
 
         turnPlaneForward: function() {
+            this.$emit('shake-plane', false);
+            this.shakeTl.clear();
+
             const tau = Math.PI * 2;
             this.hasTurned = true;
             this.timeline.to(this.plane.rotation, {

@@ -1,0 +1,13 @@
+.TooltipActivator {
+    animation-name: colorFade;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    @keyframes colorFade {
+        from { color: white }
+        30%  { color: $dark-gray }
+        60%  { color: white }
+        to   { transform: white }    
+    }    
+}

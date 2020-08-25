@@ -34,7 +34,7 @@
         font-size: 5rem;
         line-height: 1.2;
         margin-left: 12.7rem;
-        color: rgb(24, 24, 124);
+        color: $dark-blue;
 
         @include sm-down {
             margin-left: 7rem;

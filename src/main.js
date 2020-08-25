@@ -4,10 +4,12 @@ import vuetify from './plugins/vuetify';
 import './styles/styles.scss';
 import Store from './service/store';
 import router from './router'
+import GoogleAnalyticsService from './service/google-analytics';
 
 Vue.config.productionTip = false;
 
 Vue.prototype.$store = Store;
+Vue.prototype.$ga = GoogleAnalyticsService;
 
 new Vue({
   vuetify,

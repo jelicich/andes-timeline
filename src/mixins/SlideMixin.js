@@ -1,7 +1,7 @@
 const BG_SLIDER_SEL = '#slider .custom-background';
 
 export default {
-    props: ['isActive', 'duration'],
+    props: ['isActive', 'duration', 'slideNumber'],
     data() {
         return {}
     },
@@ -28,6 +28,8 @@ export default {
             setTimeout(() => {
                 document.querySelector(BG_SLIDER_SEL).classList.remove('cloudy');
             }, this.duration * 1000)
+            
+            // this.$emit('shake-plane', false);
         }
     }
 }

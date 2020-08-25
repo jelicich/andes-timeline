@@ -4,7 +4,7 @@
             <h1>
                 <span class="title-1">Airbus 320</span>
             </h1>
-            <h2 class="date">DIC 2009</h2>
+            <h2 class="date">DIC 2012</h2>
         </div>
         <div>
             <p class="description mt-3">
@@ -12,7 +12,8 @@
                 <span class="pl-2">con los cuales realizó vuelos charters a Centro América y El Caribe.</span><br>
             </p>
             <a href="https://aeromarket.com.ar/noticias/andes-con-a320/"
-                target="_blank" class="ButtonLink float-right mr-7 mr-sm-0">
+                target="_blank" class="ButtonLink float-right mr-7 mr-sm-0"
+                @click="$ga.trackEvent($ga.actions.CLICKED, 'Link ' + slideNumber)">
                 <v-icon>mdi-link</v-icon>+info
             </a>
         </div>

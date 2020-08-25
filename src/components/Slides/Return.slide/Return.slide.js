@@ -13,7 +13,7 @@ export default {
         CloudPng,
         InstaPhoto
     },
-    props: ['isActive'],
+    props: [],
     data() {
         return {
             state: this.$store.state,
@@ -41,7 +41,10 @@ export default {
                     //     document.querySelector(BG_SLIDER_SEL).classList.remove('cloudy');
                     // }, this.duration * 1000)
                     
-                    this.$emit('shake-plane', false);
+                    if(this.slideNumber > this.state.activeSlide) {
+                        this.$emit('shake-plane', false);
+                    }
+                    
                 }
             }
         }
@@ -49,7 +52,7 @@ export default {
     methods: {
         onActive: function() {
             // document.querySelector(SLIDER_SEL).classList.add(this.backgroundClass);
-
+            
             document.querySelector(BG_SLIDER_SEL).classList.add('isVisible');
             document.querySelector(BG_SLIDER_SEL).classList.add('cloudy');
             
@@ -66,9 +69,12 @@ export default {
             //         ease: "power4.out",
             //     }, '-=' + this.duration * .75);
 
-            this.$emit('shake-plane', true);
+            setTimeout(() => {
+                this.$emit('shake-plane', true);
+                this.hasToClear = true;
+            }, this.duration * 1001)
 
-            this.hasToClear = true;
+            
         },
 
         getRandomFromRange: function(min, max) {

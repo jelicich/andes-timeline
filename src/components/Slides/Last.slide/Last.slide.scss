@@ -1,0 +1,133 @@
+.last-slide {
+    display: flex;
+    color: #fff;
+    position: relative;
+
+    .Slide-inner {
+        pointer-events: none;
+    }
+
+    .title-1 {
+        font-size: 7.5rem;
+        display: block;
+        line-height: 0.45;
+        color: $dark-gray;
+        text-shadow: 0 0 20px #fff;
+
+        @include sm-down {
+            margin-top: -3rem;
+            font-size: 4rem;
+            margin-left: 3rem;
+        }
+    }
+
+    .title-2 {
+        font-size: 6rem;
+        line-height: 0.8;
+        margin-left: 9rem;
+        text-shadow: 0 0 20px $dark-gray;
+        
+        @include sm-down {
+            display: inline-block;
+            font-size: 2.5rem;
+            line-height: 1;
+            margin-left: 4rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .date {
+        position: absolute;
+        top: 48px;
+        left: -5px;
+        text-align: right;
+        line-height: 0.8;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 4rem;        
+
+        @include sm-down {
+            font-size: 2rem;
+            top: -4px;
+            left: 38px;
+        }
+    }
+
+    .description {
+        font-size: 2.3rem;
+        line-height: 1.3;
+        white-space: pre-wrap;
+        font-weight: bold;
+        text-shadow: 0 0 10px $dark-gray;
+
+        a {
+            color: #fff;
+            pointer-events: auto;
+        }
+
+        .v-icon {
+            color: #fff;
+        }
+
+        @include sm-down {
+            padding: 0 10px !important;
+            font-size: 1.6rem;
+            padding: 0 30px;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    .insta-photo {
+        @include sm-down {
+            width: 60vw !important;
+            height: 40vw !important;
+            margin-left: 30px !important; 
+        }
+    }
+    
+    .pics-container {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        top: 0;
+        left: 0;
+
+        // opacity: 0.5;
+        
+        width: 100vw;
+        height: calc(100vh - 60px);
+        background-size: auto 40vh;
+
+        @include sm-down {
+            height: calc(100vh - 120px);
+        }
+
+        .pic {
+            width: calc(100vw / 15);
+            height: calc(100% / 5);
+            opacity: 0;
+            visibility: hidden;
+
+            -webkit-filter: grayscale(100%);
+            -moz-filter:    grayscale(100%);
+            -ms-filter:     grayscale(100%);
+            -o-filter:      grayscale(100%);
+            filter: gray; 
+
+            -webkit-transition: .5s -webkit-filter linear, opacity .5s ease-in-out;
+            -moz-transition: .5s -moz-filter linear, opacity .5s ease-in-out;
+            -moz-transition: .5s filter linear, opacity .5s ease-in-out;
+            -ms-transition: .5s -ms-filter linear, opacity .5s ease-in-out;
+            -o-transition: .5s -o-filter linear, opacity .5s ease-in-out;
+            transition: .5s filter linear, .5s -webkit-filter linear, opacity .5s ease-in-out;
+        }
+
+        .pic:hover {
+            opacity: 1 !important;
+            filter: none;
+        }
+    }
+
+}

@@ -22,12 +22,13 @@
                 <span class="pl-0 pl-sm-6"><strong>de salarios, reducción del 40% de su personal y la eliminación de rutas.</strong></span><br>
             </p>
             <a href="https://www.ambito.com/edicion-impresa/estilo-a/la-revolucion-los-aviones-transita-zona-turbulencias-n5003864"
-                target="_blank" class="ButtonLink float-right mr-7 mr-sm-0">
+                target="_blank" class="ButtonLink float-right mr-7 mr-sm-0"
+                @click="$ga.trackEvent($ga.actions.CLICKED, 'Link ' + slideNumber)">
                 <v-icon>mdi-link</v-icon>+info
             </a>
 
             <insta-photo class="ml-0" fileName="marcha.jpeg" rotation="5" width="300px" height="250px"
-                note="Repudiando las malas politicas">
+                note="En la lucha!">
             </insta-photo>
         </div>
     </div>

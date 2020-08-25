@@ -1,0 +1,69 @@
+<article class="Slide last-slide" v-bind:class="{ isActive: isActive }">
+
+    <div class="pics-container" ref="cloudsContainer">
+        <div v-for="i in picsAmount" :key="i" class="pic" ref="pic">
+            <v-img class="img-grid" width="100%" height="100%" :src="require(`../../../assets/fotos/${i}.jpg`)"></v-img>
+        </div>
+    </div>
+
+    <div class="Slide-inner">
+        <div>
+            <h1>
+                <!-- <span class="title-2">chau</span> -->
+                <span class="title-1">280 familias</span>
+                <span class="title-2">necesitamos tu apoyo</span>
+            </h1>
+            <p class="description mt-4">
+                Ayudanos a visibilizar nuestra situación. 
+            </p>
+            <p class="description">
+                Seguinos en las redes:
+                <v-btn icon href="https://twitter.com/empleados_andes" target="_blank"
+                    @click="$ga.trackEvent($ga.actions.CLICKED, 'Twitter')">
+                    <v-icon>mdi-twitter</v-icon>
+                </v-btn>
+    
+                <v-btn icon href="https://www.instagram.com/empleados_argentinos_andes/" target="_blank"
+                    @click="$ga.trackEvent($ga.actions.CLICKED, 'Instagram')">
+                    <v-icon>mdi-instagram</v-icon>
+                </v-btn>
+    
+                <v-btn icon href="https://www.facebook.com/empleados.argentinos.andes" target="_blank"
+                    @click="$ga.trackEvent($ga.actions.CLICKED, 'Facebook')">
+                    <v-icon>mdi-facebook</v-icon>
+                </v-btn>
+            </p>
+            <p class="description">
+                Compartí en twitter <a target="_blank" 
+                :href="`https://twitter.com/intent/tweet?hashtags=todossomosandes&text=${encodeURI('Yo apoyo el trabajo argentino www.todossomosandes.com.ar')}`"
+                @click="$ga.trackEvent($ga.actions.CLICKED, 'Hashtag slide')">#TodosSomosAndes</a>
+            </p>
+                
+            <!-- <h2 class="date">OCT<br>2018</h2> -->
+        </div>
+        <!-- <div>
+            <p class="description mt-0">
+                <span class="pl-0 pl-sm-2">A las malas políticas aplicadas se suman los fracasos económicos del
+                    gobierno.</span><br>
+                <span class="pl-0 pl-sm-2">Las fuertes <strong>devaluaciones</strong> de Mayo y Agosto hicieron que los
+                    costos </span><br>
+                <span class="pl-0 pl-sm-2">operativos (los cuales son en dolares) sean imposibles de afrontar. El dolar
+                    subio de $17 a $40. </span><br>
+                <span class="pl-0 pl-sm-6">Esto resultó en la <strong>devolución de los cuatro Boeing, demora en el pago
+                    </strong> </span><br>
+                <span class="pl-0 pl-sm-6"><strong>de salarios, reducción del 40% de su personal y la eliminación de
+                        rutas.</strong></span><br>
+            </p>
+            <a href="https://www.ambito.com/edicion-impresa/estilo-a/la-revolucion-los-aviones-transita-zona-turbulencias-n5003864"
+                target="_blank" class="ButtonLink float-right mr-7 mr-sm-0">
+                <v-icon>mdi-link</v-icon>+info
+            </a>
+
+            <insta-photo class="ml-0" fileName="marcha.jpeg" rotation="5" width="300px" height="250px"
+                note="En la lucha!">
+            </insta-photo>
+        </div> -->
+    </div>
+</article>
+
+

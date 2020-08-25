@@ -4,6 +4,11 @@
     left: 0;
     width: 100vw;
     pointer-events: none;
+
+    // @include sm-down {
+    //     bottom: auto;
+    //     top: calc(100% - 51px);
+    // }
     
     .plane-wrapper {
         display: none;
@@ -62,7 +67,7 @@
                 pointer-events: auto;
                 
                 @include sm-down {
-                    padding-bottom: 28px;
+                    padding-bottom: 50px;
                 }
                 
                 &::before {
@@ -77,6 +82,40 @@
 
                 div {
                     cursor: pointer;
+                }
+
+                .timeline-misc-container {
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    display: flex;
+                    
+                    .timeline-misc {
+                        animation-name: floating;
+                        animation-duration: 2s;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: ease-in-out;
+                        margin-left: 5px;
+                        // margin-top: 5px;
+                        
+                        
+                        @keyframes floating {
+                            from { transform: translate(0,  0px); }
+                            65%  { transform: translate(0, 7.5px); }
+                            to   { transform: translate(0, -0px); }    
+                        }    
+    
+                        .timeline-misc-icon {
+                            border: 1px solid #fff;
+                            border-radius: 50%;
+                            background: $dark-blue;
+                            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+                            padding: 3px;
+                            .v-icon {
+                                color: #fff;
+                            }
+                        }
+                    }
                 }
             }
         }

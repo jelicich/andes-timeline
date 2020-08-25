@@ -34,7 +34,7 @@
         font-size: 5rem;
         line-height: 1;
         margin-left: 5.5rem;
-        color: #272727;
+        color: $dark-gray;
 
         @include sm-down {
             font-size: 2.5rem;
@@ -94,5 +94,4 @@
         background: url('../../../assets/clouds.png') repeat-x;
         background-size: auto 40vh;
     }
-
 }

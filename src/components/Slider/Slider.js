@@ -9,6 +9,11 @@ import AirbusSlide from '../Slides/Airbus.slide';
 import BoeingSlide from '../Slides/Boeing.slide';
 import TheMomentSlide from '../Slides/TheMoment.slide';
 import ReturnSlide from '../Slides/Return.slide';
+import WorldCupSlide from '../Slides/WorldCup.slide';
+import MalvinasSlide from '../Slides/Malvinas.slide';
+import DebtSlide from '../Slides/Debt.slide';
+import PandemicSlide from '../Slides/Pandemic.slide';
+import LastSlide from '../Slides/Last.slide';
 
 import Util from '../../service/util';
 
@@ -29,7 +34,12 @@ export default {
         AirbusSlide,
         BoeingSlide,
         TheMomentSlide,
-        ReturnSlide
+        ReturnSlide,
+        WorldCupSlide,
+        MalvinasSlide,
+        DebtSlide,
+        PandemicSlide,
+        LastSlide
     },
     props: ['slides', 'duration', 'isDelayed'],
     data() {
@@ -65,6 +75,7 @@ export default {
 
             handler: function() {
                 this.animateSlide(this.state.activeSlide);
+                this.$ga.trackEvent(this.$ga.actions.SCROLLED_TO, this.slides[this.state.activeSlide].title);
             }
         }
     },
@@ -100,7 +111,7 @@ export default {
             
             // check if slide gesture is long enough to slide
             // we don't want a slightly slide to change slides
-            const isSlidable = Math.abs(this.touchStart - touchEnd) > 20;
+            const isSlidable = Math.abs(this.touchStart - touchEnd) > 30;
 
             if(isSlidable) {
                 if (this.touchStart > touchEnd) {

@@ -6,6 +6,7 @@
             :is="slide.component" 
             :isActive="state.activeSlide === i" 
             :duration="duration"
+            :slideNumber="i"
             v-on:shake-plane="handleShake"
             ></component>
     </template>

@@ -31,6 +31,10 @@ export default {
         // animationDuration: util.isMobile() ? 2 : 2,
     }),
     mounted() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+        this.$ga.init();
         // set duration for css transition
         if(util.isMobile()) {
             document.documentElement.style.setProperty('--animation-duration', '2s');
@@ -43,6 +47,7 @@ export default {
             }, animationDuration * 1000)
         })
         window.andesTimeline.isFirstLoad = false;
+        
     },
     watch: {
     },

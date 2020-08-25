@@ -13,5 +13,5 @@
     </div>
     <sky :duration="animationDuration" :slidesLength="slidesLength"></sky>
     <slider :slides="slides" :duration="animationDuration" v-on:shake-plane="onShakePlane"></slider>
-    <timeline :slides="slides" :duration="animationDuration" :shakePlane="shakePlane"></timeline>
+    <timeline :slides="slides" :duration="animationDuration" :shakePlane="shakePlane" v-on:shake-plane="onShakePlane"></timeline>
 </section>

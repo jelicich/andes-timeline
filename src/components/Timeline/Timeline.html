@@ -11,6 +11,24 @@
                     <h1>{{ slide.title }}</h1>
                     <p>{{ slide.date }}</p>
                 </div>
+                <div class="timeline-misc-container" v-if="slide.miscs">
+                    <div class="timeline-misc" v-for="misc in slide.miscs">
+                        <v-tooltip top>
+                            <template v-slot:activator="{ on, attrs }">
+                                <span v-bind="attrs" v-on="on">
+                                    <div class="timeline-misc-icon">
+                                        <v-icon>{{ misc.icon }}</v-icon>
+                                    </div>
+                                </span>
+                            </template>
+                            <span class="timeline-misc-content" 
+                                style="display: inline-block; max-width: 300px;"
+                                v-html="misc.content">
+                            </span>
+                        </v-tooltip>
+                    </div>
+                </div>
+                
             </li>
         </ul>
     </div>

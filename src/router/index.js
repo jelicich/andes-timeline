@@ -28,4 +28,14 @@ const router = new VueRouter({
     routes
 })
 
+router.afterEach((function(to, from) {
+    // do not track first load as navigated
+    if(!from.name) {
+        return;
+    }
+    this.$ga.trackEvent(this.$ga.actions.NAVIGATED, to.name);
+}).bind(Vue.prototype));
+
+
+
 export default router
