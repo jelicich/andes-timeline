@@ -133,7 +133,6 @@ export default {
 
                 this.timeline.eventCallback("onComplete", () => {
                     if(this.hasTurned) {
-                        console.log('rotation reset');
                         this.plane.rotation.x = 0;
                         this.plane.rotation.z = 0;    
                         this.hasTurned = false;
@@ -269,7 +268,6 @@ export default {
         },
 
         onShakePlaneChange: function() {
-            console.log('plane shake', this.shakePlane);
             if(this.shakePlane) {
                 
                 if(this.timeline.isActive()) {

@@ -52,7 +52,6 @@ export default {
         }
     },
     mounted() {
-        // console.log('length', this.slidesLength, 'width', this.width)
     },
     methods: {
         getRandom: function(n) {

@@ -14,7 +14,6 @@ export default {
     },
     watch: {
         drawer: function() {
-            console.log('changed drawer')
             const sliderClass = 'isBlocked';
             const slider = document.querySelector(SLIDER_SEL)
             slider && slider.classList.toggle(sliderClass, this.drawer);

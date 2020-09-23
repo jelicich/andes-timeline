@@ -28,7 +28,6 @@ export default {
 
     },
     mounted() {
-        console.log('start mounted: ', this.isActive);
     },
     watch: {
         state: {

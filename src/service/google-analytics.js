@@ -9,7 +9,7 @@ const GoogleAnalyticsService = {
 
     init: function () {
         const _gaq = window._gaq = window._gaq || [];
-        _gaq.push(['_setAccount', 'UA-111208499-1']);
+        _gaq.push(['_setAccount', 'UA-178736506-1']);
         _gaq.push(['_trackPageview']);
       
         (function() {
@@ -18,13 +18,11 @@ const GoogleAnalyticsService = {
           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
        
-        console.log('GA Service init')
         this.hasStarted = true;
     },
 
     trackEvent: function(action, value) {
-        console.log('trackEvent', action, value);
-        // window._gaq.push(['_trackEvent', value, action]);
+        window._gaq.push(['_trackEvent', value, action]);
     },
 
     formatValue: function(chipData) {

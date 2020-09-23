@@ -67,9 +67,6 @@ export default {
         window.addEventListener('touchstart', this.setTouchStart);
         
         window.addEventListener('touchend', this.setSlideMobile);
-
-        console.log('page loaded event listeners registered');
-
     },
     watch: {
         state: {
@@ -146,7 +143,6 @@ export default {
         
         // BELLOW: experimental mimic scrollTrigger
         calculateScroll(e) {
-            console.log('delta:', e.deltaY);
             this.moveSlide(e.deltaY);
         },
 

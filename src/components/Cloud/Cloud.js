@@ -13,14 +13,12 @@ export default {
 
     },
     mounted() {
-        console.log('seeds:' ,this.seed);
         // this.animateCloud();
     },
     methods: {
 
         // it's not smooth and too much resources used
         animateCloud: function() {
-            console.log('animatecloud')
             this.tl.to('.feTurbulence', {
                 //delay: 1,
                 attr:{'baseFrequency':0.02},
