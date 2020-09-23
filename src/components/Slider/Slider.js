@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import InstructionsSlide from '../Slides/Instructions.slide';
 import StartSlide from '../Slides/Start.slide';
 import SecondPlaneSlide from '../Slides/SecondPlane.slide';
 import RevolutionSlide from '../Slides/Revolution.slide';
@@ -25,6 +26,7 @@ const BLOCKED_CLASS = 'isBlocked';
 export default {
     name: 'slider',
     components: {
+        InstructionsSlide,
         StartSlide,
         SecondPlaneSlide,
         SecondRouteSlide,

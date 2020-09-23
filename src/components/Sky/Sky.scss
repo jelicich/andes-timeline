@@ -6,6 +6,10 @@
     background-size: auto 40vh;
     pointer-events: none;
 
+    @include sm-down {
+        height: calc(var(--vh, 1vh) * 100);
+    }
+
     .cloud-container {
         position: absolute;
         top: 20vh;

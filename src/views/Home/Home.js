@@ -18,6 +18,11 @@ export default {
         return {
             slides: [
                 {
+                    title: '',
+                    date: '',
+                    component: 'instructions-slide'
+                },
+                {
                     title: 'Inicio',
                     date: 'Jun 2006',
                     component: 'start-slide'
@@ -39,7 +44,7 @@ export default {
                 },
                 {
                     title: 'Aviones estratégicos',
-                    date: 'JUN 2010',
+                    date: 'Jun 2010',
                     component: 'bombardier-slide'
                 },
                 {
@@ -65,7 +70,7 @@ export default {
                         <img src="${require('../../assets/dakar.jpg')}" height="200"/>`
                     }, {
                         icon: 'mdi-music',
-                        content: `<strong>ABR 2014:</strong> Trasladamos a los musicos y equipo técnico de <strong>Paul McCartney</strong> durante el tour Out There! por latinoamerica (Uruguay, Chile, Perú, Ecuador y Costa Rica).`
+                        content: `<strong>ABR 2014:</strong> Trasladamos a los músicos y equipo técnico de <strong>Paul McCartney</strong> durante el tour Out There! por latinoamerica (Uruguay, Chile, Perú, Ecuador y Costa Rica).`
                     }]
                 },
                 {
@@ -93,7 +98,7 @@ export default {
                     component: 'malvinas-slide',
                     miscs: [{
                         icon: 'mdi-motorbike',
-                        content: `<strong>ABR 2018:</strong> Llevamos a los pilotos y equipos del <strong>Moto GP</strong>.`
+                        content: `<strong>ABR 2018:</strong> Llevamos a los pilotos y equipos del <strong>Moto GP</strong>. En el año 2019 volvimos a hacer estos vuelos.`
                     }]
                 },
                 {
@@ -112,7 +117,7 @@ export default {
                     component: 'return-slide',
                     miscs: [{
                         icon: 'mdi-music',
-                        content: `<strong>MAR 2019:</strong> Realizamos la gira por latinoamerica transportando al equipo de <strong>Luis Miguel</strong> en el tour "México por siempre". (Chile, Argentina, Paraguay, Perú, Colombia, Panamá, Costa Rica, El Salvador, Guatemala, República Dominicana, Puerto Rico).
+                        content: `<strong>MAR 2019:</strong> Realizamos la gira por latinoamerica transportando al equipo técnico de <strong>Luis Miguel</strong> en el tour "México por siempre". (Chile, Argentina, Paraguay, Perú, Colombia, Panamá, Costa Rica, El Salvador, Guatemala, República Dominicana, Puerto Rico).
                         <img src="${require('../../assets/luis-miguel.jpg')}" height="160"/>`
                     }]
                 },
@@ -137,7 +142,6 @@ export default {
             //slidesLength: this.slides.length
             util: new Util(),
 
-            isFirstLoad: window.andesTimeline.isFirstLoad,
         };
     },
     computed: {
@@ -146,10 +150,7 @@ export default {
         }
     },
     mounted() {
-        if(this.util.isMobile()) {
-            const sliderClass = 'isBlocked';
-            document.querySelector(SLIDER_SEL).classList.add(sliderClass);
-        }
+
     },
     methods: {
         onShakePlane: function(status) {

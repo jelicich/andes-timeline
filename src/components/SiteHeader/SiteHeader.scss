@@ -4,12 +4,12 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    // max-height: 10vh;
     z-index: 3;
-    // transition: max-height 0.5s;
-
-    // background: red;
     pointer-events: none;
+
+    @include sm-down {
+        height: calc(var(--vh, 1vh) * 100);
+    }
 
     h1,
     h1 a {

@@ -1,0 +1,44 @@
+<article class="Slide instructions-slide">
+    <div class="Slide-inner">
+        <div>
+            <h1>
+                <span class="title-1">258 familias</span>
+                <span class="title-2">necesitamos tu ayuda</span>
+            </h1>
+            <!-- <h2 class="date">JUN<br>2006</h2> -->
+
+            <h2 class="mt-4 text-center">
+                11 meses sin sueldo · 2 años sin paritarias
+            </h2>
+
+            <div class="buttons-container mt-10">
+                <router-link to="/about" class="v-btn v-btn--contained theme--light v-size--default primary">
+                        Enterate de la situación actual
+                </router-link>
+
+                <a target="_blank" 
+                    title="Clickeá para compartir en Twitter"
+                    :href="`https://twitter.com/intent/tweet?hashtags=todossomosandes&text=${encodeURI('Yo apoyo el trabajo argentino www.todossomosandes.com.ar')}`"
+                    @click="$ga.trackEvent($ga.actions.CLICKED, 'Call to action Twitter')"
+                    class="v-btn v-btn--contained theme--light v-size--default primary">
+                    Apoyanos en Twitter
+                </a>
+
+                <v-btn  color="primary" @click="start">
+                    Conocé nuestra historia 
+                    <v-icon>
+                        mdi-play
+                    </v-icon>
+                </v-btn>
+            </div>
+            <!-- <a href="https://www.noticiasdeturismo.com.ar/noa/despego-hoy-de-salta-el-vuelo-inaugural-de-andes-lineas-aereas.html/393"
+                target="_blank" class="ButtonLink float-right mr-7 mr-sm-0"
+                @click="$ga.trackEvent($ga.actions.CLICKED, 'Link ' + slideNumber)">
+                <v-icon>mdi-link</v-icon>info
+            </a> -->
+        </div>
+        <!-- <div>
+            
+        </div> -->
+    </div>
+</article>

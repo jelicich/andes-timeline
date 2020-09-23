@@ -1,17 +1,16 @@
 <article class="Slide last-slide" v-bind:class="{ isActive: isActive }">
 
     <div class="pics-container" ref="cloudsContainer">
-        <div v-for="i in picsAmount" :key="i" class="pic" ref="pic">
-            <v-img class="img-grid" width="100%" height="100%" :src="require(`../../../assets/fotos/${i}.jpg`)"></v-img>
+        <div v-for="n,i in shuffledPicturesArray" :key="i" class="pic" ref="pic">
+            <v-img class="img-grid" width="100%" height="100%" :src="require(`../../../assets/fotos/${n}.jpg`)"></v-img>
         </div>
     </div>
 
     <div class="Slide-inner">
         <div>
             <h1>
-                <!-- <span class="title-2">chau</span> -->
-                <span class="title-1">280 familias</span>
-                <span class="title-2">necesitamos tu apoyo</span>
+                <span class="title-1">Gracias</span>
+                <span class="title-2">por llegar hasta acá</span>
             </h1>
             <p class="description mt-4">
                 Ayudanos a visibilizar nuestra situación. 

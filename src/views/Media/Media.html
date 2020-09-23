@@ -1,0 +1,26 @@
+<section class="media">
+    <div class="media-inner">
+        <v-container>
+            <v-row>
+                <v-col cols="12" :sm="6" :md="4" :lg="3" v-for="item, i in links" :key="i">
+                    <v-card color="#62a0d8" dark>
+                        
+                        <v-card-title class="mb-2">
+                            <div class="media-date mb-1">{{item.date}}</div>
+                            {{item.title}}
+                        </v-card-title>
+        
+                        <v-card-subtitle>
+                            <v-chip small color="primary">{{item.tag}}</v-chip>
+                        </v-card-subtitle>
+        
+                        <v-card-actions>
+                            <v-btn text :href="item.link" target="_blank">VER</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-col>
+            </v-row>
+            
+        </v-container>
+    </div>
+</section>

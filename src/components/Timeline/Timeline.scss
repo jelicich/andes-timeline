@@ -67,7 +67,7 @@
                 pointer-events: auto;
                 
                 @include sm-down {
-                    padding-bottom: 50px;
+                    // padding-bottom: 50px;
                 }
                 
                 &::before {
@@ -78,6 +78,12 @@
                     left: 0;
                     bottom: 0;
                     background: rgba(255, 255, 255, 0.5);
+                }
+
+                &:first-child::before {
+                    content: "";
+                    width: 0;
+                    background: none;
                 }
 
                 div {

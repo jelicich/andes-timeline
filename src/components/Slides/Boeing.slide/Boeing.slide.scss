@@ -13,6 +13,10 @@
         display: block;
         line-height: 0.5;
 
+        @include md {
+            font-size: 7rem;
+        }
+
         @include sm-down {
             font-size: 4rem;
             margin-left: 3rem;
@@ -23,6 +27,11 @@
         font-size: 5rem;
         line-height: 0.5;
         margin-left: 6.5rem;
+
+        @include md {
+            font-size: 3.8rem;
+            margin-left: 4.5rem;
+        }
         
         @include sm-down {
             font-size: 2.5rem;
@@ -37,7 +46,13 @@
         text-align: right;
         line-height: 0.8;
         color: rgba(255, 255, 255, 0.5);
-        font-size: 4rem;        
+        font-size: 4rem;  
+        
+        @include md {
+            font-size: 3rem;
+            top: -35px;
+            left: -25px;
+        }
 
         @include sm-down {
             font-size: 2rem;

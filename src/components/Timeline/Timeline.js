@@ -58,6 +58,7 @@ export default {
     },
     mounted() {
         this.initPlane();
+        window.goTo = this.goTo;
     },
     methods: {
 

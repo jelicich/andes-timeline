@@ -2,6 +2,12 @@
     display: flex;
     color: #fff;
 
+    .Slide-inner {
+        @include sm-down {
+            padding-top: 30px;
+        }
+    }
+
     .inner {
         margin: auto;
         position: relative;
@@ -13,6 +19,10 @@
         display: block;
         line-height: 0.45;
 
+        @include md {
+            font-size: 7rem;
+        }
+
         @include sm-down {
             font-size: 4rem;
             margin-left: 3rem;
@@ -23,6 +33,11 @@
         font-size: 4.5rem;
         line-height: 0.5;
         margin-left: 9rem;
+
+        @include md {
+            font-size: 3.5rem;
+            margin-left: 6.5rem;
+        }
         
         @include sm-down {
             font-size: 2rem;
@@ -35,6 +50,11 @@
         line-height: 1;
         margin-left: 5.5rem;
         color: $dark-gray;
+
+        @include md {
+            font-size: 4rem;
+            margin-left: 2rem;
+        }
 
         @include sm-down {
             font-size: 2.5rem;
@@ -49,11 +69,17 @@
         text-align: right;
         line-height: 0.8;
         color: rgba(255, 255, 255, 0.5);
-        font-size: 4rem;        
+        font-size: 4rem;    
+        
+        @include md {
+            font-size: 3rem;
+            top: -40px;
+            left: -5px;
+        }
 
         @include sm-down {
             font-size: 2rem;
-            top: -25px;
+            top: 5px;
             left: 18px;
         }
     }
@@ -75,10 +101,22 @@
     }
 
     .insta-photo {
-        @include sm-down {
-            width: 60vw !important;
-            height: 40vw !important;
+        width: 15vw !important;
+        height: 10vw !important;
+
+        @include md {
+            width: 15vw !important;
+            height: 10vw !important;
             margin-left: 30px !important; 
+        }
+        
+        @include sm-down {
+            position: absolute;
+            width: 55vw !important;
+            height: 30vw !important;
+            margin-left: 30px !important; 
+            top: -5vh;
+            right: 10px;
         }
     }
     
@@ -93,5 +131,9 @@
         height: 100vh;
         background: url('../../../assets/clouds.png') repeat-x;
         background-size: auto 40vh;
+
+        @include sm-down {
+            height: calc(var(--vh, 1vh) * 100);
+        }
     }
 }

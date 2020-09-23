@@ -1,0 +1,103 @@
+.instructions-slide {
+    display: flex;
+    color: #fff;
+
+    h1 {
+        @include sm-down {
+            padding-left: 30px;
+            text-align: center;
+        }
+    }
+
+    h2 {
+        font-size: 2.5rem;
+
+        @include sm-down {
+            font-size: 2rem;
+        }
+    }
+
+    .title-1 {
+        font-size: 7.5rem;
+        display: block;
+        line-height: 0.45;
+
+        @include sm-down {
+            margin-top: -3rem;
+            font-size: 4rem;
+            margin-left: -3rem;
+        }
+    }
+
+    .title-2 {
+        font-size: 6rem;
+        line-height: 0.8;
+        margin-left: 9rem;
+        
+        @include sm-down {
+            display: inline-block;
+            font-size: 2.5rem;
+            line-height: 1;
+            margin-left: 3rem;
+            margin-bottom: 2rem;
+        }
+    }
+    
+    .buttons-container {
+        display: flex;
+        justify-content: space-between;
+
+        @include sm-down {
+            flex-direction: column;
+            gap: 20px;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    .v-btn {
+        font-size: 1.6rem;
+        text-transform: none;
+        letter-spacing: 0em;
+
+        @include sm-down {
+            font-size: 1.7rem;
+            padding: 2.3rem 0;
+        }
+    }
+
+    .date {
+        position: absolute;
+        top: -12px;
+        left: -65px;
+        text-align: right;
+        line-height: 0.8;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 4rem;
+        
+        @include md {
+            left: -45px;
+            font-size: 3rem;
+        }
+
+        @include sm-down {
+            font-size: 2rem;
+            left: 7px;
+        }
+    }
+
+    .description {
+        font-size: 2rem;
+        font-style: italic;
+        line-height: 1;
+
+        @include sm-down {
+            font-size: 1.6rem;
+            padding: 0 30px;
+
+            br {
+                display: none;
+            }
+        }
+    }
+}

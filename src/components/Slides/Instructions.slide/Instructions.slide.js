@@ -1,12 +1,9 @@
-import SlideMixin from '../../../mixins/SlideMixin';
-import InstaPhoto from '../../InstaPhoto';
+import SlideMixin from '../../../mixins/SlideMixin'
 
 export default {
-    name: 'bombardier-slide',
+    name: 'start-slide',
     mixins: [SlideMixin],
-    components: {
-        InstaPhoto
-    },
+    components: {},
     props: [],
     data() {
         return {
@@ -20,7 +17,10 @@ export default {
 
     },
     methods: {
-
+        start: function() {
+            window.goTo(1);
+        },
     }
 }
+
 

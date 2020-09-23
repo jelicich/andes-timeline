@@ -14,6 +14,10 @@
         line-height: 0.45;
         color: $dark-gray;
 
+        @include md {
+            font-size: 5.75rem;
+        }
+
         @include sm-down {
             margin-top: -3rem;
             font-size: 4rem;
@@ -25,6 +29,11 @@
         font-size: 6rem;
         line-height: 0.8;
         margin-left: 9rem;
+
+        @include md {
+            font-size: 4rem;
+            margin-left: 8rem;
+        }
         
         @include sm-down {
             display: inline-block;
@@ -42,7 +51,13 @@
         text-align: right;
         line-height: 0.8;
         color: rgba(255, 255, 255, 0.5);
-        font-size: 4rem;        
+        font-size: 4rem;   
+        
+        @include md {
+            font-size: 3rem;
+            top: 35px;
+            left: 8px;
+        }
 
         @include sm-down {
             font-size: 2rem;
@@ -57,6 +72,11 @@
         line-height: 1;
         white-space: pre-wrap;
 
+        @include md {
+            width: 500px;
+            margin-left: 10px;
+        }
+
         @include sm-down {
             font-size: 1.6rem;
             padding: 0 30px;
@@ -68,6 +88,12 @@
     }
 
     .insta-photo {
+        @include md {
+            width: 20vw !important;
+            height: 15vw !important;
+            margin-left: 30px !important; 
+        }
+
         @include sm-down {
             width: 60vw !important;
             height: 40vw !important;
@@ -86,6 +112,10 @@
         height: 100vh;
         background: url('../../../assets/clouds.png') repeat-x;
         background-size: auto 40vh;
+
+        @include sm-down {
+            height: calc(var(--vh, 1vh) * 100);
+        }
     }
 
 }

@@ -3,15 +3,14 @@
     height: 100vh;
     display: grid;
     grid-auto-flow:column;
-    // background: linear-gradient(165deg, #527785 0%, #527785 100%);
-    // background: linear-gradient(0deg, #62a0d8 0%, #2178d1 50%, #085cb3 100%);
     transition: background-color 4s ease-in-out;
-
-    // background-image: -webkit-linear-gradient(top, #085cb3, #62a0d8);
-    // background: linear-gradient(to top, #085cb3, #62a0d8);
     background-image: url('../../assets/bg1.png');
     background-repeat: repeat-x;
     background-size: contain;
+
+    @include sm-down {
+        height: calc(var(--vh, 1vh) * 100);
+    }
 
     .custom-background {
         height: 100vh;
@@ -20,6 +19,10 @@
         background-repeat: repeat-x;
         position: absolute;
         background-size: contain;
+
+        @include sm-down {
+            height: calc(var(--vh, 1vh) * 100);
+        }
 
         &.isVisible{
             opacity: 1;   

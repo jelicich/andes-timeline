@@ -14,6 +14,10 @@
         line-height: 0.4;
         margin-left: 6.8rem;
 
+        @include md {
+            font-size: 7rem;
+        }
+
         @include sm-down {
             font-size: 4rem;
             margin-left: 7.5rem;
@@ -24,6 +28,10 @@
     .title-2 {
         font-size: 4.2rem;
         line-height: 0.5;
+
+        @include md {
+            font-size: 3.5rem;
+        }
         
         @include sm-down {
             font-size: 2.5rem;
@@ -39,6 +47,12 @@
         line-height: 0.8;
         color: rgba(255, 255, 255, 0.5);
         font-size: 3rem;
+
+        @include md {
+            font-size: 2.5rem;
+            left: 10px;
+            top: 30px;
+        }
 
         @include sm-down {
             font-size: 2rem;

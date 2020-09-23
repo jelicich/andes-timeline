@@ -1,26 +1,69 @@
 <section class="about">
     <div class="about-inner">
-        <v-container>
+        <v-container class="mb-12">
             <v-row>
                 <v-col cols="12">
                     <h1>Empleados Andes</h1>
                 </v-col>
             </v-row>
             <v-row>
-                <v-col cols="12">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At tellus at urna condimentum mattis pellentesque id nibh tortor. Proin fermentum leo vel orci porta non pulvinar. Orci dapibus ultrices in iaculis. Aliquet bibendum enim facilisis gravida neque convallis. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Diam quis enim lobortis scelerisque fermentum. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. Non arcu risus quis varius quam quisque id. Aliquam sem fringilla ut morbi tincidunt. Eu scelerisque felis imperdiet proin fermentum. Tristique senectus et netus et malesuada fames ac. Neque sodales ut etiam sit amet. Massa tincidunt dui ut ornare lectus sit amet est. Ultrices sagittis orci a scelerisque purus. Dictum fusce ut placerat orci nulla pellentesque dignissim enim sit.</p>
+                <v-col cols="12" md="6">
+                    <p>Esta página web fue creada para difundir y entender mejor la evolución 
+                        de la precaria situación laboral de los <strong>trabajadores de Andes Líneas Aéreas SA</strong>.
+                    </p>
 
-                    <p>Duis ultricies lacus sed turpis tincidunt. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Suscipit tellus mauris a diam maecenas sed enim. Arcu felis bibendum ut tristique et egestas quis ipsum. Dolor sed viverra ipsum nunc aliquet. Id cursus metus aliquam eleifend mi in nulla. At in tellus integer feugiat scelerisque varius morbi enim. Est lorem ipsum dolor sit amet. Massa ultricies mi quis hendrerit. Erat imperdiet sed euismod nisi porta lorem mollis aliquam. Tempus egestas sed sed risus. Neque ornare aenean euismod elementum. Id donec ultrices tincidunt arcu non sodales neque. In mollis nunc sed id semper risus. Iaculis nunc sed augue lacus. Integer vitae justo eget magna fermentum iaculis eu non diam.</p>
+                    <p>Como es de público conocimiento, actualmente el <strong>sector aeronáutico</strong> a nivel mundial vive la <strong>crisis</strong>
+                        más grave de su historia debido a la situación generada por la pandemia del Covid-19 y el consecuente 
+                        cese repentino del tráfico aéreo. Sin embargo la crisis aeronáutica en Argentina comenzó a mediados de 
+                        2018, debido a las malas políticas aerocomerciales tomadas durante el gobierno macrista, lideradas por 
+                        <strong>Dietrich</strong>, quien prometió impulsar el sector aeronáutico, cuando en realidad sólo logró <strong>precarizar
+                        y flexibilizar</strong> el mismo.
+                    </p>
+                    
+                    <p>Al día de hoy (Septiembre 2020), luego de <strong>dos años sin paritarias o actualización,</strong> <strong>la deuda salarial</strong> de la empresa con los empleados, se extiende a <strong>11 meses</strong>.
+                        Tampoco se están realizando los aportes jubilatorios, sindicales, ni a la obra social que, en un contexto de pandemia, agrava aún más la situación.
+                    </p>
+
+                    <p>Frente a este escenario, muchos de los empleados, hemos tenido que pedir ayuda económica a familiares y amigos;
+                        salimos a buscar nuevas fuentes de trabajo e ingresos para poder subsistir; dejamos nuestras casas
+                        para compartir gastos con alguien más o volvimos a vivir con nuestros padres. Vendimos nuestros muebles, nuestras
+                        pertenencias y llevamos a nuestras familias a comedores y merenderos para poder darles un plato de comida.
+                    </p>
+
+                    <p>
+                        Todos los empleados tenemos mucho cariño hacia la empresa y un gran sentido de pertenencia con la familia aeronáutica.
+                        Vamos a seguir luchando por lo que tanto soñamos y nos costó conseguir. No queremos bajar los brazos, ayudanos a visibilizar
+                        nuestra lucha. <strong>Necesitamos tu aporte</strong>. Seguinos en las redes, compartí el contenido, poné "me gusta" en las publicaciones.
+                    </p>
+
+                    <p>
+                        ¡Tu apoyo nos da fuerzas para continuar!
+                    </p>
+                    
+                    <p>
+                        <v-btn icon href="https://twitter.com/empleados_andes" target="_blank"
+                        @click="$ga.trackEvent($ga.actions.CLICKED, 'Twitter')">
+                            <v-icon>mdi-twitter</v-icon>
+                        </v-btn>
+
+                        <v-btn icon href="https://www.instagram.com/empleados_andes/" target="_blank"
+                        @click="$ga.trackEvent($ga.actions.CLICKED, 'Instagram')">
+                            <v-icon>mdi-instagram</v-icon>
+                        </v-btn>
+
+                        <v-btn icon href="https://www.facebook.com/empleados.andes" target="_blank"
+                        @click="$ga.trackEvent($ga.actions.CLICKED, 'Facebook')">
+                            <v-icon>mdi-facebook</v-icon>
+                        </v-btn>
+                    </p>
+
+                    <p><strong>¡Gracias!</strong></p>
                 </v-col>
-                <!-- <v-col cols="6">
-                    <v-container>
-                        <v-row>
-                            <v-col class="pa-0 img-container" cols="2" v-for="pic, index in 20" :key="index" >
-                                <v-img class="img-grid" width="100%" height="100%" :src="require(`../../assets/fotos/f-${index+1}.jpeg`)"></v-img>
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-col> -->
+                <v-col cols="12" md="6">
+                    
+                    <v-img :src="require(`../../assets/todos.png`)"></v-img>
+                    
+                </v-col>
             </v-row>
         </v-container>
     </div>

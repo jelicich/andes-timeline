@@ -27,7 +27,13 @@ export default {
         };
     },
     computed: {
+        shuffledPicturesArray: function () {
+            let numbers = Array.from(Array(this.picsAmount)).map((v,i) => {
+                return i
+            })
 
+            return this.shuffleArray(numbers);
+        },
     },
     mounted() {
         console.log('start mounted: ', this.isActive);
@@ -86,17 +92,34 @@ export default {
             return Math.floor(Math.random() * (max - min + 1) + min);
         },
 
-        animateBg: function () {
-            const numbers = Array.from(Array(this.picsAmount)).map((v,i) => {
-                return i
-            })
-            for(var i = this.picsAmount-1; i >= 0; i--) {
+        shuffleArray: function (arr) {
+            const array = [...arr];
+            for(var i = array.length-1; i >= 0; i--) {
                 const target = this.getRandomFromRange(0,i);
                 
-                const tempTo = numbers[target];
-                numbers[target] = numbers[i];
-                numbers[i] = tempTo;
+                const tempTo = array[target];
+                array[target] = array[i];
+                array[i] = tempTo;
             }
+            return array;
+        },
+
+        animateBg: function () {
+            let numbers = Array.from(Array(this.picsAmount)).map((v,i) => {
+                return i
+            })
+
+            numbers = this.shuffleArray(numbers);
+
+            // shuffle
+            // for(var i = this.picsAmount-1; i >= 0; i--) {
+            //     const target = this.getRandomFromRange(0,i);
+                
+            //     const tempTo = numbers[target];
+            //     numbers[target] = numbers[i];
+            //     numbers[i] = tempTo;
+            // }
+
             setTimeout((() => {
                 numbers.map((n, i) => {
                     setTimeout((() => {

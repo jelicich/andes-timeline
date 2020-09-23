@@ -1,5 +1,5 @@
 <section class="home">
-    <div v-if="isFirstLoad" class="instructions" ref="intro">
+    <!-- <div v-if="isFirstLoad" class="instructions" ref="intro">
         <div class="text-center">
             <p>Esta es una guía interactiva para conocer la historia y entender la problemática de los empleados de Andes Líneas Aéreas.</p>
         </div>
@@ -10,7 +10,7 @@
         <div class="text-center">
             <v-btn depressed small color="primary" @click="closeIntro()" class="mt-3">Ok</v-btn>
         </div>
-    </div>
+    </div> -->
     <sky :duration="animationDuration" :slidesLength="slidesLength"></sky>
     <slider :slides="slides" :duration="animationDuration" v-on:shake-plane="onShakePlane"></slider>
     <timeline :slides="slides" :duration="animationDuration" :shakePlane="shakePlane" v-on:shake-plane="onShakePlane"></timeline>
