@@ -15,12 +15,17 @@
                         </v-card-subtitle>
         
                         <v-card-actions>
-                            <v-btn text :href="item.link" target="_blank">VER</v-btn>
+                            <v-btn 
+                            text 
+                            :href="item.link" 
+                            target="_blank"
+                            @click="$ga.trackEvent($ga.actions.CLICKED, 'Media: ' + item.title)">
+                                VER
+                            </v-btn>
                         </v-card-actions>
                     </v-card>
                 </v-col>
-            </v-row>
-            
+            </v-row>  
         </v-container>
     </div>
 </section>

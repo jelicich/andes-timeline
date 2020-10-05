@@ -3,9 +3,7 @@ import { TimelineMax, TweenLite, Power1 } from 'gsap';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import Util from '../../service/util';
-// import variables from '../../styles/variables.scss';
 
-// const util = new Util();
 const FORWARD = 'forward';
 const BACKWARD = 'backward';
 const util = new Util();
@@ -18,7 +16,6 @@ export default {
         return {
             state: this.$store.state,
             timeline: gsap.timeline(),
-            // liWidth: variables.timelineElementWidth,
             liWidth: 300, // TODO import from css???
             turnDuration: 2.5,
             previousSlide: this.$store.state.activeSlide,
@@ -30,8 +27,6 @@ export default {
             renderer: null,
             plane: null,
             animationReqId: null,
-
-            
 
             shakeTl: new TimelineMax({repeat:-1}),
             hasTurned: false,
@@ -72,12 +67,11 @@ export default {
             
             this.camera = new THREE.PerspectiveCamera(
                 40,
-                window.innerWidth / this.canvasHeight, // window.innerWidth / window.innerHeight,
+                window.innerWidth / this.canvasHeight,
                 1,
                 5000
             )
             
-            // this.camera.rotation.x = -90/180*Math.PI;
             this.camera.position.x = 0;
             this.camera.position.y = -17;
             this.camera.position.z = -80;
@@ -103,8 +97,6 @@ export default {
                 alpha: true
             });
 
-            // this.renderer.setClearColor( 0x000000, 0 ); // the default
-            // this.renderer.setSize(window.innerWidth, window.innerHeight);
             this.renderer.setSize(window.innerWidth, this.canvasHeight);
             this.renderer.setPixelRatio(window.devicePixelRatio)
             
@@ -171,7 +163,6 @@ export default {
 
             this.previousSlide = slideNumber;
             this.previousDirection = this.direction;            
-            
         },
 
         turnPlaneBackwards: function() {
@@ -285,19 +276,16 @@ export default {
                         x: tau * 0.003, 
                         y: '+=' + tau * 0.003, 
                         z: tau * 0.006, 
-                        // ease:Power1.easeInOut
                     })
                     .to(this.plane.rotation, 0.4, { 
                         x: -tau * 0.006,
                         y: '+=' + -tau * 0.006,  
                         z: -tau * 0.012,
-                        // ease:Power1.easeInOut
                     })
                     .to(this.plane.rotation, 0.2, { 
                         x: 0, 
                         y: '+=' + tau * 0.003, 
                         z: 0, 
-                        // ease:Power1.easeInOut
                     })
         
                 TweenLite.to(this.plane.rotation, 27, {ease:Power1.easeInOut})

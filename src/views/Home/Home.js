@@ -3,7 +3,6 @@ import Sky from '../../components/Sky';
 import Timeline from '../../components/Timeline';
 import Util from '../../service/util';
 
-// const util = new Util();
 const SLIDER_SEL = '#slider';
 
 export default {
@@ -137,9 +136,8 @@ export default {
                     component: 'last-slide'
                 },
             ],
-            // animationDuration: util.isMobile() ? 2 : 4,
+            
             shakePlane: false,
-            //slidesLength: this.slides.length
             util: new Util(),
 
         };

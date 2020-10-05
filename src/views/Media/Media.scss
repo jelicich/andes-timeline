@@ -1,5 +1,4 @@
 .media {
-    // background-image: url('../../assets/bg1.png');
     background-color: #62a0d8;
     background-repeat: repeat-x;
     background-size: contain;
@@ -14,6 +13,7 @@
         height: calc(100vh - 64px);
         background: #fff;
         overflow-y: scroll;
+        padding-bottom: 64px;
     }
 
     .v-card__title {

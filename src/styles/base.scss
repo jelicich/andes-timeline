@@ -1,10 +1,6 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    
-    // @include sm-down {
-    //     font-size: 50%;
-    // }
 }
 html,
 body {
@@ -13,13 +9,8 @@ body {
     overflow: hidden;
     
     @include sm-down {
-        // avoid scroll in mobile
-        // height: calc(var(--vh, 1vh) * 100);
-        // height: 100%;
-        @include sm-down {
-            height: calc(var(--vh, 1vh) * 100);
-        }
-    }
+        height: calc(var(--vh, 1vh) * 100);
+    }  
 }
 *,
 *:before,
@@ -35,7 +26,6 @@ h3,
 h4,
 h5,
 h6 {
-    // text-transform: uppercase;
     margin: 0;
     strong {
         font-weight: 800;

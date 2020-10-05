@@ -4,11 +4,6 @@
     left: 0;
     width: 100vw;
     pointer-events: none;
-
-    // @include sm-down {
-    //     bottom: auto;
-    //     top: calc(100% - 51px);
-    // }
     
     .plane-wrapper {
         display: none;
@@ -48,7 +43,6 @@
             padding-left: 0;
             height: 100%;
             font-size: 1.8rem;
-            // transform: translateX(50%);
             display: flex;
             margin-left: 50vw;
 
@@ -65,10 +59,6 @@
                 width: $timeline-element-width;
                 flex: 0 0 $timeline-element-width;
                 pointer-events: auto;
-                
-                @include sm-down {
-                    // padding-bottom: 50px;
-                }
                 
                 &::before {
                     content: "";
@@ -102,8 +92,6 @@
                         animation-iteration-count: infinite;
                         animation-timing-function: ease-in-out;
                         margin-left: 5px;
-                        // margin-top: 5px;
-                        
                         
                         @keyframes floating {
                             from { transform: translate(0,  0px); }
@@ -126,25 +114,4 @@
             }
         }
     }
-
-    // .timeline-nav-left,
-    // .timeline-nav-right {
-    //     position: absolute;
-    //     top: 0;
-    //     z-index: 500;
-    //     background: rgba(11, 12, 65, 0.5);
-    //     border-radius: 50%;
-    //     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-        
-    //     .v-icon {
-    //         color: #fff;
-    //         font-size: 4rem;
-        
-    //     }
-    // }
-
-    // .timeline-nav-right {
-    //     right: 0
-    // }
-
 }

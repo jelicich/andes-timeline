@@ -1,105 +1,91 @@
 <section class="site-header">
-    <!-- <h1>#todossomosandes</h1> -->
+    <v-app-bar color="rgba(255,255,255,0)" dark>
+        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-    <!-- <v-card class="mx-auto overflow-hidden" height="400"> -->
-        <v-app-bar color="rgba(255,255,255,0)" dark>
-            <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+        <v-toolbar-title>
+            <h1>
+                <a target="_blank" 
+                    title="Clickeá para compartir en Twitter"
+                    :href="`https://twitter.com/intent/tweet?hashtags=todossomosandes&text=${encodeURI('Yo apoyo el trabajo argentino \nwww.todossomosandes.com.ar \n@empleados_andes \n')}`"
+                    @click="$ga.trackEvent($ga.actions.CLICKED, 'Hasthag header')"
+                    >#TodosSomosAndes</a>
+            </h1>
+        </v-toolbar-title>
 
-            <v-toolbar-title>
-                <h1>
-                    <!-- "https://twitter.com/intent/tweet?hashtags=TwitterStories%2CTBT%2CFF&amp;original_referer=https%3A%2F%2Fdeveloper.twitter.com%2Fen%2Fdocs%2Ftwitter-for-websites%2Ftweet-button%2Fguides%2Fhashtag-button&amp;ref_src=twsrc%5Etfw&amp;text=My%20story&amp;tw_p=tweetbutton" -->
-                    <a target="_blank" 
-                        title="Clickeá para compartir en Twitter"
-                        :href="`https://twitter.com/intent/tweet?hashtags=todossomosandes&text=${encodeURI('Yo apoyo el trabajo argentino www.todossomosandes.com.ar')}`"
-                        @click="$ga.trackEvent($ga.actions.CLICKED, 'Hasthag header')"
-                        >#TodosSomosAndes</a>
-                </h1>
-            </v-toolbar-title>
+        <v-spacer></v-spacer>
 
-            <v-spacer></v-spacer>
+        <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://twitter.com/empleados_andes" target="_blank"
+        @click="$ga.trackEvent($ga.actions.CLICKED, 'Twitter')">
+            <v-icon>mdi-twitter</v-icon>
+        </v-btn>
 
-            <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://twitter.com/empleados_andes" target="_blank"
-            @click="$ga.trackEvent($ga.actions.CLICKED, 'Twitter')">
-                <v-icon>mdi-twitter</v-icon>
-            </v-btn>
+        <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://www.instagram.com/empleados_andes/" target="_blank"
+        @click="$ga.trackEvent($ga.actions.CLICKED, 'Instagram')">
+            <v-icon>mdi-instagram</v-icon>
+        </v-btn>
 
-            <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://www.instagram.com/empleados_andes/" target="_blank"
-            @click="$ga.trackEvent($ga.actions.CLICKED, 'Instagram')">
-                <v-icon>mdi-instagram</v-icon>
-            </v-btn>
+        <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://www.facebook.com/empleados.andes" target="_blank"
+        @click="$ga.trackEvent($ga.actions.CLICKED, 'Facebook')">
+            <v-icon>mdi-facebook</v-icon>
+        </v-btn>
+    </v-app-bar>
 
-            <v-btn icon v-if="$vuetify.breakpoint.mdAndUp" href="https://www.facebook.com/empleados.andes" target="_blank"
-            @click="$ga.trackEvent($ga.actions.CLICKED, 'Facebook')">
-                <v-icon>mdi-facebook</v-icon>
-            </v-btn>
-
-        </v-app-bar>
-
-        <v-navigation-drawer v-model="drawer" absolute temporary>
-            <div>
-                <div v-if="$vuetify.breakpoint.smAndDown" class="social-icons-drawer">
-                    <v-btn icon href="https://twitter.com/empleados_andes" target="_blank"
-                    @click="$ga.trackEvent($ga.actions.CLICKED, 'Twitter')">
-                        <v-icon>mdi-twitter</v-icon>
-                    </v-btn>
-        
-                    <v-btn icon href="https://www.instagram.com/empleados_andes/" target="_blank"
-                    @click="$ga.trackEvent($ga.actions.CLICKED, 'Instagram')">
-                        <v-icon>mdi-instagram</v-icon>
-                    </v-btn>
-        
-                    <v-btn icon href="https://www.facebook.com/empleados.andes" target="_blank"
-                    @click="$ga.trackEvent($ga.actions.CLICKED, 'Facebook')">
-                        <v-icon>mdi-facebook</v-icon>
-                    </v-btn>
-                </div>
-                <hr v-if="$vuetify.breakpoint.smAndDown">
-                <v-list nav dense>
-                    <v-list-item-group >
-                        <router-link to="/">
-                            <v-list-item>
-                                <v-list-item-icon>
-                                    <v-icon>mdi-history</v-icon>
-                                </v-list-item-icon>
-                                <v-list-item-title>Linea de tiempo</v-list-item-title>
-                            </v-list-item>
-                        </router-link>
-
-                        <router-link to="/about">
-                            <v-list-item>
-                                <v-list-item-icon>
-                                    <v-icon>mdi-information-outline</v-icon>
-                                </v-list-item-icon>
-                                <v-list-item-title>Empleados Andes</v-list-item-title>
-                            </v-list-item>
-                        </router-link>
-
-                        <router-link to="/media">
-                            <v-list-item>
-                                <v-list-item-icon>
-                                    <v-icon>mdi-newspaper-variant-outline</v-icon>
-                                </v-list-item-icon>
-                                <v-list-item-title>En los medios</v-list-item-title>
-                            </v-list-item>
-                        </router-link>
+    <v-navigation-drawer v-model="drawer" absolute temporary>
+        <div>
+            <div v-if="$vuetify.breakpoint.smAndDown" class="social-icons-drawer">
+                <v-btn icon href="https://twitter.com/empleados_andes" target="_blank"
+                @click="$ga.trackEvent($ga.actions.CLICKED, 'Twitter')">
+                    <v-icon>mdi-twitter</v-icon>
+                </v-btn>
     
-                        <!-- <v-list-item>
+                <v-btn icon href="https://www.instagram.com/empleados_andes/" target="_blank"
+                @click="$ga.trackEvent($ga.actions.CLICKED, 'Instagram')">
+                    <v-icon>mdi-instagram</v-icon>
+                </v-btn>
+    
+                <v-btn icon href="https://www.facebook.com/empleados.andes" target="_blank"
+                @click="$ga.trackEvent($ga.actions.CLICKED, 'Facebook')">
+                    <v-icon>mdi-facebook</v-icon>
+                </v-btn>
+            </div>
+            <hr v-if="$vuetify.breakpoint.smAndDown">
+            <v-list nav dense>
+                <v-list-item-group >
+                    <router-link to="/">
+                        <v-list-item>
                             <v-list-item-icon>
-                                <v-icon>mdi-account</v-icon>
+                                <v-icon>mdi-history</v-icon>
                             </v-list-item-icon>
-                            <v-list-item-title>Account</v-list-item-title>
-                        </v-list-item> -->
-    
-                    </v-list-item-group>
-                </v-list>
-                
-            </div>
+                            <v-list-item-title>Linea de tiempo</v-list-item-title>
+                        </v-list-item>
+                    </router-link>
+
+                    <router-link to="/about">
+                        <v-list-item>
+                            <v-list-item-icon>
+                                <v-icon>mdi-information-outline</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>Empleados Andes</v-list-item-title>
+                        </v-list-item>
+                    </router-link>
+
+                    <router-link to="/media">
+                        <v-list-item>
+                            <v-list-item-icon>
+                                <v-icon>mdi-newspaper-variant-outline</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>En los medios</v-list-item-title>
+                        </v-list-item>
+                    </router-link>    
+                </v-list-item-group>
+            </v-list>
             
-            <div class="text-center">
-                <a class="dev-contact" href="https://www.linkedin.com/in/esteban-jelicich-84279b39/" target="_blank">
-                    Desarrollo
-                </a>
-            </div>
-        </v-navigation-drawer>
-    <!-- </v-card> -->
+        </div>
+        
+        <div class="text-center">
+            <a class="dev-contact" href="https://www.linkedin.com/in/esteban-jelicich-84279b39/" target="_blank" @click="$ga.trackEvent($ga.actions.CLICKED, 'Desarrollo')">
+                Desarrollo
+            </a>
+        </div>
+    </v-navigation-drawer>
 </section>

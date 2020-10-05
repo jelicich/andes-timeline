@@ -19,5 +19,13 @@
                     <v-icon>mdi-link</v-icon>info
             </a>
         </div>
+
+        <div class="instructions text-center mt-10" v-if="util.isMobile()">
+            Deslizá para moverte en la línea de tiempo<v-icon class="ml-3">mdi-gesture-swipe</v-icon>
+        </div>
+
+        <div class="instructions text-center mt-10" v-if="!util.isMobile()">
+            Scrolleá para moverte en la línea de tiempo<v-icon class="ml-3">mdi-mouse-move-vertical</v-icon>
+        </div>
     </div>
 </article>

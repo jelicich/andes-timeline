@@ -14,7 +14,7 @@ export default {
 
     },
     mounted() {
-        this.animateCloud();
+        // this.animateCloud();
     },
     methods: {
         animateCloud: function() {
@@ -32,8 +32,6 @@ export default {
                 })
     
             TweenLite.to(cloud, 27, {ease:Power1.easeInOut})
-
-            
         }
     }
 }

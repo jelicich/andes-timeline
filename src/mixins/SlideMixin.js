@@ -28,8 +28,6 @@ export default {
             setTimeout(() => {
                 document.querySelector(BG_SLIDER_SEL).classList.remove('cloudy');
             }, this.duration * 1000)
-            
-            // this.$emit('shake-plane', false);
         }
     }
 }

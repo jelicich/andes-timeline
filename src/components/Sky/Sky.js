@@ -36,11 +36,6 @@ export default {
         widthCss: function() {
             return this.width + 'vw';
         },
-
-        // vhLimit: function() {
-        //     return window
-        // }
-
     },
     watch: {
         state: {

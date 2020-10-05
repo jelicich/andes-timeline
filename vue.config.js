@@ -18,5 +18,5 @@ module.exports = {
             },
         },
     },
-    publicPath: '/timeline/'
+    // publicPath: '/timeline/'
 }

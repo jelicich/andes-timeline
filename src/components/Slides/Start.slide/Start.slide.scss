@@ -70,4 +70,20 @@
             }
         }
     }
+
+    .instructions,
+    i {
+        color: #fff;
+    }
+
+    .instructions {
+        font-size: 1.4rem;
+
+        @include sm-up {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            margin-left: -150px;
+        }
+    }
 }
