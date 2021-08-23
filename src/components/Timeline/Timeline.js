@@ -52,6 +52,7 @@ export default {
         }
     },
     mounted() {
+        console.log('base url', this.$baseUrl);
         this.initPlane();
         window.goTo = this.goTo;
     },
@@ -111,8 +112,9 @@ export default {
         },
 
         setupModel: function() {
+            console.log('base URL: ', this.$baseUrl);
             const loader = new GLTFLoader();
-            loader.load('/plane-model/md80.glb', (gltf) => {
+            loader.load(this.$baseUrl + '/plane-model/md80.glb', (gltf) => {
                 const md = gltf.scene.children[0];
                 this.camera.lookAt(md.position);
                 this.plane = gltf.scene;

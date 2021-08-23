@@ -5,10 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:sandbox": "vue-cli-service build --mode sandbox",
+    "deploy:gh-pages": "npm run build:sandbox && gh-pages -d dist"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "gh-pages": "^3.2.3",
     "gsap": "^3.4.2",
     "three": "^0.119.1",
     "vue": "^2.6.11",

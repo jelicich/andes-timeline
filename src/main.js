@@ -11,6 +11,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$store = Store;
 Vue.prototype.$ga = GoogleAnalyticsService;
 Vue.prototype.$ga.init();
+Vue.prototype.$baseUrl = process.env.BASE_URL;
 
 new Vue({
   vuetify,
